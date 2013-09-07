@@ -1,10 +1,6 @@
 <?php
-
-API_KEY = 'a3377ceb5414edef';
-METEO_API_ENDPOINT = "http://api.wunderground.com/api/" . API_KEY . "/conditions/q/";
-FORECAST_API_ENDPOINT = "http://api.wunderground.com/api/" . API_KEY . "/forecast/q/";
-
-CITY = 'CA/San_Francisco.json';
+const API_KEY = 'a3377ceb5414edef';
+const CITY = 'CA/San_Francisco.json';
 
 class Meteo {
 	/**
@@ -13,10 +9,18 @@ class Meteo {
 	private static $_instance;
 
 	/**
+	 * Attribute
+	 */
+	protected $_api_key = 'a3377ceb5414edef';
+	protected $_forecast_api_endpoint;
+	protected $_meteo_api_endpoint;
+
+	/**
 	 * Singleton constructor
 	 */
 	private function __construct() {
-
+		$_meteo_api_endpoint = 'http://api.wunderground.com/api/' . $this->_api_key . '/conditions/q/';
+		$_forecast_api_endpoint = 'http://api.wunderground.com/api/' . $this->_api_key . '/forecast/q/';
 	}
 	
 	/**
@@ -28,7 +32,7 @@ class Meteo {
 	 * get singleton instance
 	 */
 	public static function getInstance() {
-		if ( ! isset( $this->_instance ) ) {
+		if ( ! isset( self::$_instance ) ) {
 			self::$_instance = new Meteo();
 		}
 
