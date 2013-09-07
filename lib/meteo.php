@@ -49,6 +49,19 @@ class Meteo {
 		}
 		return $meteo;
 	}
+	
+	/**
+	 * return meteo JSON by zmw
+	 */
+	public function get_meteo_by_zmw($zmw, $decode = false)
+	{
+		$meteo = file_get_contents( $this->_meteo_api_endpoint .  'zmw:' . $zmw . '.json');
+		if ($decode)
+		{
+			$meteo = json_decode($meteo);
+		}
+		return $meteo;
+	}	
 
 	/**
 	 * return forecast JSON
@@ -66,6 +79,16 @@ class Meteo {
 	 */
 	public function get_global_data()
 	{
-		
+		$data = array();
+		$yaml_cities = file_get_contents(CITIES_YML);
+		$cities = Spyc::YAMLLoad($yaml_cities);
+		foreach ($cities as $c)
+		{
+			$meteo = get_meteo_by_zmw($c['zmw']);
+			$meteo['zmw'] = $c['zmw'];
+			$meteo['dataset'] = $c['dataset'];	
+			$data[] = $meteo;
+		}
+		return ($data);
 	}
 }
