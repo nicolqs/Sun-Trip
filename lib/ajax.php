@@ -4,7 +4,7 @@ include 'meteo.php';
 
 class Ajax {
 	public function __construct() {
-		if ( isset( $_POST['action'] ) && isset( $_POST['get_meteo'] ) ) {
+		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
 			$this->getAllWeather();
 		}
 	}
