@@ -39,8 +39,8 @@ class Meteo {
 	 * return meteo JSON
 	 */
 	public function getMeteo() {
-		$forecast = file_get_contents( METEO_API_ENDPOINT . CITY );
-		return $forecast;
+		$meteo = file_get_contents( METEO_API_ENDPOINT . CITY );
+		return json_decode($meteo);
 	}
 
 	/**
@@ -48,8 +48,6 @@ class Meteo {
 	 */
 	public function getForecast() {
 		$forecast = file_get_contents( FORECAST_API_ENDPOINT . CITY );
-		return $forecast;
+		return json_decode($forecast);
 	}
 }
-
-

@@ -24,10 +24,13 @@ include 'lib/meteo.php';
         <H1>NOW</h1>
     <?php 
 
-        $meteo = Meteo::getInstance();
+        $meteoApi = Meteo::getInstance();
+        $meteo = $meteoApi->getMeteo();
         
-        echo $meteo->current_observation->display_location->city; ?>
+        echo $meteo->current_observation->display_location->city; 
+    ?>
         <img src="<?php echo $meteo->current_observation->icon_url; ?>">
+        
         <?php echo $meteo->current_observation->temperature_string; ?>
 
         <H1>FORECAST</h1>
