@@ -13,74 +13,168 @@ sydney:
 hong_kong:
   dataset: tt_honkon_pearson
   zmw: 00000.1.45007
-delhi: tt_delhi
-  dataset:
-  zmw:
-washington_dc: tt_wasdc
-  dataset:
-  zmw:
-tallin: tt_tallin
-  dataset:
-  zmw:
-san_francisco: tt_sanfra
-  dataset:
-  zmw:
-honolu: tt_honolu
-  dataset:
-  zmw:
-copenhagen: tt_copenh
-  dataset:
-  zmw:
-sanant: tt_sanant
-malta: tt_malta
-saint_petersburg: tt_stpet
-mexico: tt_mexico
-prague: tt_prague
-phuket: tt_phuket
-iceland: tt_icelan
-san_felipe: tt_sanfe
-new_orleans: tt_neworl
-cape_town: tt_captow
-istanbul: tt_istanb
-barcelona: tt_barcel
-scotland: tt_scotla
-cuba: tt_cuba
-tuscan: tt_tuscan
-singapore: tt_singap
-paris: tt_paris
-dublin: tt_dublin
-dominican_republic: tt_domrep
-puerto_rico: tt_pueric
-athens: tt_athens
-sandie: tt_sandie
-rome: tt_rome
-bangkok: tt_bangko
-seattle: tt_seattl
-moscow: tt_moscow
-los_angeles: tt_losang
-venice: tt_venice
-munich: tt_munich
-las_vegas: tt_lasveg_pearson
-corsica: tt_corsic
-vanvic: tt_vanvic
-london: tt_london
-lisbon: tt_lisbon
-buenos_aires: tt_bueair
-naples: tt_napama
-boston: tt_boston
-budapest: tt_budape
-rio_de_janeiro: tt_riode
-newyork: tt_newyor
-cyprus: tt_cyprus
-tokyo: tt_tokyo
-marrakech: tt_marrak
-algarve: tt_algarv
-crete: tt_crete
-madrid: tt_madrid
-andcos: tt_andcos
-gran_canaria: tt_gracan
-millan: tt_millak
-vienna: tt_vienna
-seoul: tt_seoul
-amsterdam: tt_amster
-toronto: tt_toront
+delhi:
+  dataset: tt_delhi
+  zmw: 00000.8.42182
+washington_dc:
+  dataset: tt_wasdc
+  zmw: 20001.1.99999
+tallinn:
+  dataset: tt_tallin
+  zmw: 00000.1.26038
+san_francisco:
+  dataset: tt_sanfra
+  zmw: 94101.1.99999
+honolulu:
+  dataset: tt_honolu
+  zmw: 96801.1.99999
+copenhagen:
+  dataset: tt_copenh
+  zmw: 00000.1.06180
+san_antonio:
+  dataset: tt_sanant
+  zmw: 78201.1.99999
+malta:
+  dataset: tt_malta
+  zmw: 00000.1.16597
+saint_petersburg:
+  dataset: tt_stpet
+  zmw: 00000.1.26063
+mexico:
+  dataset: tt_mexico
+  zmw: 00000.26.76679
+prague:
+  dataset: tt_prague
+  zmw: 00000.1.11518
+phuket:
+  dataset: tt_phuket
+  zmw: 00000.1.48565
+iceland:
+  dataset: tt_icelan
+  zmw: 00000.1.04030
+new_orleans:
+  dataset: tt_neworl
+  zmw: 70112.1.99999
+cape_town:
+  dataset: tt_captow
+  zmw: 00000.1.68816
+istanbul:
+  dataset: tt_istanb
+  zmw: 00000.1.17060
+barcelona:
+  dataset: tt_barcel
+  zmw: 00000.1.08181
+scotland:
+  dataset: tt_scotla
+  zmw: 00000.25.03160
+cuba:
+  dataset: tt_cuba
+  zmw: 00000.1.78224
+tuscania:
+  dataset: tt_tuscan
+  zmw: 00000.45.16216
+singapore:
+  dataset: tt_singap
+  zmw: 00000.1.48698
+paris:
+  dataset: tt_paris
+  zmw: 00000.98.07150
+dublin:
+  dataset: tt_dublin
+  zmw: 00000.1.03969
+dominican_republic:
+  dataset: tt_domrep
+  zmw: 00000.1.78486
+puerto_rico:
+  dataset: tt_pueric
+  zmw: g2000.1.99999
+athens:
+  dataset: tt_athens
+  zmw: 00000.1.16716
+rome:
+  dataset: tt_rome
+  zmw: 00000.1.16240
+bangkok:
+  dataset: tt_bangko
+  zmw: 00000.16.48456
+seattle:
+  dataset: tt_seattl
+  zmw: 98101.1.99999
+moscow:
+  dataset: tt_moscow
+  zmw: 00000.1.27612
+los_angeles:
+  dataset: tt_losang
+  zmw: 90001.1.99999
+venice:
+  dataset: tt_venice
+  zmw: 00000.1.16105
+munich:
+  dataset: tt_munich
+  zmw: 00000.1.10866
+las_vegas:
+  dataset: tt_lasveg_pearson
+  zmw: 89044.2.99999
+vancouver:
+  dataset: tt_vanvic
+  zmw: 00000.1.71892
+london:
+  dataset: tt_london
+  zmw: 00000.1.03772
+lisbon:
+  dataset: tt_lisbon
+  zmw: 00000.1.08536
+buenos_aires:
+  dataset: tt_bueair
+  zmw: 00000.1.87582
+naples:
+  dataset: tt_napama
+  zmw: 00000.1.16289
+boston:
+  dataset: tt_boston
+  zmw: 02101.1.99999
+budapest:
+  dataset: tt_budape
+  zmw: 00000.6.12838
+rio_de_janeiro:
+  dataset: tt_riode
+  zmw: 00000.1.83755
+newyork:
+  dataset: tt_newyor
+  zmw: 10001.5.99999
+cyprus:
+  dataset: tt_cyprus
+  zmw: 00000.18.17607
+tokyo:
+  dataset: tt_tokyo
+  zmw: 00000.1.47671
+marrakech:
+  dataset: tt_marrak
+  zmw: 00000.1.60230
+algarve:
+  dataset: tt_algarv
+  zmw: 00000.23.08554
+crete:
+  dataset: tt_crete
+  zmw: 00000.19.16754
+madrid:
+  dataset: tt_madrid
+  zmw: 00000.1.08221
+gran_canaria:
+  dataset: tt_gracan
+  zmw: 00000.6.60030
+milan:
+  dataset: tt_millak
+  zmw: 00000.1.16066
+vienna:
+  dataset: tt_vienna
+  zmw: 00000.1.11034
+seoul:
+  dataset: tt_seoul
+  zmw: 00000.1.47117
+amsterdam:
+  dataset: tt_amster
+  zmw: 00000.1.06240
+toronto:
+  dataset: tt_toront
+  zmw: 00000.1.71265
