@@ -42,16 +42,22 @@ class Meteo {
 	/**
 	 * return meteo JSON
 	 */
-	public function getMeteo() {
+	public function getMeteo( $decode = false ) {
 		$meteo = file_get_contents( $this->_meteo_api_endpoint . CITY );
-		return json_decode($meteo);
+		if ( $decode ) {
+			$meteo = json_decode($meteo);
+		}
+		return $meteo;
 	}
 
 	/**
 	 * return forecast JSON
 	 */
-	public function getForecast() {
+	public function getForecast( $decode = false ) {
 		$forecast = file_get_contents( $this->_forecast_api_endpoint . CITY );
-		return json_decode($forecast);
+		if ( $decode ) {
+			$forecast = json_decode($forecast);
+		}
+		return $forecast;
 	}
 }

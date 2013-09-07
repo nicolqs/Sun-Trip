@@ -1,4 +1,8 @@
 $(function() {
+	$( "#search-form" ).submit(function() {
+		
+	})	
+
 	$( "#date-checkin" ).datepicker({
 		numberOfMonths: 2,
 		showButtonPanel: true,

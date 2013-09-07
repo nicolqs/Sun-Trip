@@ -20,14 +20,14 @@ include 'lib/meteo.php';
 <body>
     <div id="map-canvas"></div>
     <div id="right-rail">
-        <h1>Sun-Trip</h1>
+        <h1>SunTrip</h1>
         <H1>NOW</h1>
     <?php 
 
         $meteoApi = Meteo::getInstance();
-        $meteo = $meteoApi->getMeteo();
-        $forecast = $meteoApi->getForecast();
-        
+        $meteo = $meteoApi->getMeteo(true);
+        $forecast = $meteoApi->getForecast(true);
+
         echo $meteo->current_observation->display_location->city; 
     ?>
         <img src="<?php echo $meteo->current_observation->icon_url; ?>">
@@ -48,7 +48,7 @@ include 'lib/meteo.php';
 
     </div>
     <div id="search-bar">
-        <form action="" method="POST">
+        <form action="" method="POST" id="search-form">
             <fieldset>
                 <legend>Search my trip</legend>
                 <ul>
@@ -66,6 +66,9 @@ include 'lib/meteo.php';
                     </li>
                     <li>
                          Max Budget: <input type="text" size="10" value="500">
+                    </li>
+                    <li>
+                        <input type="submit">
                     </li>
                 </ul>
               </fieldset>
