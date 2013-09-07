@@ -1,18 +1,36 @@
---- 
-berlin: tt_berlin
-dubabu: tt_dubabu
-chicago: tt_chicag
-miami: tt_miami
-sydney: tt_sydney
-monque: tt_monque
-lakdis: tt_lakdis
-honkong: tt_honkon_pearson
+berlin:
+  dataset: tt_berlin
+  zmw: 00000.10.10389
+chicago:
+  dataset: tt_chicag
+  zmw: 60290.1.99999
+miami:
+  dataset: tt_miami
+  zmw: 33010.2.99999
+sydney:
+  dataset: tt_sydney
+  zmw: 00000.1.94767
+hong_kong:
+  dataset: tt_honkon_pearson
+  zmw: 00000.1.45007
 delhi: tt_delhi
+  dataset:
+  zmw:
 washington_dc: tt_wasdc
+  dataset:
+  zmw:
 tallin: tt_tallin
+  dataset:
+  zmw:
 san_francisco: tt_sanfra
+  dataset:
+  zmw:
 honolu: tt_honolu
+  dataset:
+  zmw:
 copenhagen: tt_copenh
+  dataset:
+  zmw:
 sanant: tt_sanant
 malta: tt_malta
 saint_petersburg: tt_stpet
@@ -22,11 +40,7 @@ phuket: tt_phuket
 iceland: tt_icelan
 san_felipe: tt_sanfe
 new_orleans: tt_neworl
-italak: tt_italak
-devcor: tt_devcor
-calwin: tt_calwin
-captow: tt_captow
-corion: tt_corion
+cape_town: tt_captow
 istanbul: tt_istanb
 barcelona: tt_barcel
 scotland: tt_scotla
@@ -36,20 +50,17 @@ singapore: tt_singap
 paris: tt_paris
 dublin: tt_dublin
 dominican_republic: tt_domrep
-tursou: tt_tursou
-pueric: tt_pueric
+puerto_rico: tt_pueric
 athens: tt_athens
 sandie: tt_sandie
 rome: tt_rome
 bangkok: tt_bangko
-brubru: tt_brubru
 seattle: tt_seattl
 moscow: tt_moscow
-losang: tt_losang
-canyuc: tt_canyuc
+los_angeles: tt_losang
 venice: tt_venice
 munich: tt_munich
-lasveg_pearson: tt_lasveg_pearson
+las_vegas: tt_lasveg_pearson
 corsica: tt_corsic
 vanvic: tt_vanvic
 london: tt_london
