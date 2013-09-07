@@ -1,0 +1,27 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+
+
+#map-canvas {
+	/*margin: 20px auto;*/
+	width: 80%;
+	height:100%;
+	float:left;
+}
+#right-rail {
+	width:19%;
+	height:100%;
+	float:right;
+}
+#search-bar {
+	position:absolute;
+	top:20px;
+	left:180px;
+	width:1000px;
+	height:100px;
+	background-color: #fff;
+}
