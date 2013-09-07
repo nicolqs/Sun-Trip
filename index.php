@@ -25,8 +25,8 @@ include 'lib/meteo.php';
     <?php 
 
         $meteoApi = Meteo::getInstance();
-        $meteo = $meteoApi->getMeteo(true);
-        $forecast = $meteoApi->getForecast(true);
+        $meteo = $meteoApi->getMeteo( true );
+        $forecast = $meteoApi->getForecast( true );
 
         echo $meteo->current_observation->display_location->city; 
     ?>

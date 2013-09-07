@@ -1,6 +1,6 @@
 <?php
 
-include 'meteo.php'
+include 'meteo.php';
 
 class Ajax {
 	public function __construct() {
@@ -14,9 +14,10 @@ class Ajax {
         $meteo = $meteoApi->getMeteo();
         $forecast = $meteoApi->getForecast();
 
-        $output = json_encode( array( $meteo, $forecast ) );
+        // $output = json_encode( array( $meteo, $forecast ) );
 
-        echo $output;
+        echo $meteo;
+        die();
 	}
 }
 

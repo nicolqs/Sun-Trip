@@ -1,6 +1,10 @@
 $(function() {
-	$( "#search-form" ).submit(function() {
-		
+	$( "#search-form" ).submit(function(e) {
+		e.preventDefault();
+		$.get( '/lib/ajax.php', function(data){
+            // jQuery('#comments-container .fyre-stream-content').append(data);
+            console.log(data);
+        });
 	})	
 
 	$( "#date-checkin" ).datepicker({
