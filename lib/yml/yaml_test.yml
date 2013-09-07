@@ -1,0 +1,16 @@
+---
+berlin:
+  dataset: tt_berlin
+  zmw: 00000.10.10389
+chicago:
+  dataset: tt_chicag
+  zmw: 60290.1.99999
+miami:
+  dataset: tt_miami
+  zmw: 33010.2.99999
+sydney:
+  dataset: tt_sydney
+  zmw: 00000.1.94767
+hong_kong:
+  dataset: tt_honkon_pearson
+  zmw: 00000.1.45007

@@ -3,10 +3,11 @@
 $meteo_api_key = 'a3377ceb5414edef';
 
 $meteo_api_enpoint = "http://api.wunderground.com/api/${meteo_api_key}/conditions/q/";
-$meteo_query_url = $meteo_api_enpoint . 'CA/San_Francisco.json';
+$meteo_query_url = $meteo_api_enpoint . 'CA/San_Francisco.json'; // . 'zmw:00000.10.10389.json';
 
 $forecast_api_endpoint = "http://api.wunderground.com/api/${meteo_api_key}/forecast/q/";
-$forecast_query_url = $forecast_api_endpoint . 'CA/San_Francisco.json';
+$forecast_query_url = $forecast_api_endpoint . 'CA/San_Francisco.json'; // . 'zmw:00000.10.10389.json';
+
 
 $json_meteo = file_get_contents($meteo_query_url);
 /*$json_meteo = '{
@@ -496,7 +497,7 @@ $json_forecast = file_get_contents($forecast_query_url);
 		]
 		}
 	}
-}';*/
+}';
 $forecast = json_decode($json_forecast);
 ?>
 
