@@ -1,7 +1,7 @@
 $(function() {
 	$( "#search-form" ).submit(function(e) {
 		e.preventDefault();
-		$.get( '/lib/ajax.php', function(data){
+		$.post( '/lib/ajax.php', { action: "get_meteo" }, function(data){
             // jQuery('#comments-container .fyre-stream-content').append(data);
             console.log(data);
         });
