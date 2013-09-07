@@ -27,9 +27,7 @@ include 'lib/meteo.php';
         $meteoApi = Meteo::getInstance();
         $meteo = $meteoApi->getMeteo();
         $forecast = $meteoApi->getForecast();
-
-var_dump($forecast);
-
+        
         echo $meteo->current_observation->display_location->city; 
     ?>
         <img src="<?php echo $meteo->current_observation->icon_url; ?>">
