@@ -1,6 +1,6 @@
 <?php
-const API_KEY = 'a3377ceb5414edef';
-const CITY = 'CA/San_Francisco.json';
+
+require_once('const.php');
 
 class Meteo {
 	/**
@@ -42,7 +42,7 @@ class Meteo {
 	/**
 	 * return meteo JSON
 	 */
-	public function getMeteo( $decode = false ) {
+		public function getMeteo( $decode = false ) {
 		$meteo = file_get_contents( $this->_meteo_api_endpoint . CITY );
 		if ( $decode ) {
 			$meteo = json_decode($meteo);
@@ -59,5 +59,13 @@ class Meteo {
 			$forecast = json_decode($forecast);
 		}
 		return $forecast;
+	}
+
+	/**
+	 * return forecast JSON
+	 */
+	public function get_global_data()
+	{
+		
 	}
 }
