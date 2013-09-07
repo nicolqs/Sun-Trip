@@ -5,7 +5,12 @@ $(function() {
             // jQuery('#comments-container .fyre-stream-content').append(data);
             console.log(data);
         });
-	})	
+	});
+
+	$.post( '/ajax.php', { action: "get_meteo" }, function(data){
+        // jQuery('#comments-container .fyre-stream-content').append(data);
+        console.log(data);
+    });
 
 	$( "#date-checkin" ).datepicker({
 		numberOfMonths: 2,

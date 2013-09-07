@@ -1,7 +1,5 @@
 <?php
 
-include 'meteo.php';
-
 class Ajax {
 	public function __construct() {
 		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
@@ -11,12 +9,13 @@ class Ajax {
 
 	protected function getAllWeather() {
 		$meteoApi = Meteo::getInstance();
-        $meteo = $meteoApi->getMeteo();
-        $forecast = $meteoApi->getForecast();
+		$meteo = $meteoApi->get_global_data();
+  //       $meteo = $meteoApi->getMeteo();
+  //       $forecast = $meteoApi->getForecast();
 
         // $output = json_encode( array( $meteo, $forecast ) );
 
-        echo $meteo;
+        echo json_encode ( $meteo );
         die();
 	}
 }
