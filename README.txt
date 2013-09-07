@@ -8,4 +8,4 @@ While42
 September 7th 2013
 
 === Info ===
-SF Disrupt Hackathon 2013
+SF Disrupt Hackathon 2013 - GOGOGOGOGOGOOOOO!
