@@ -1,3 +1,16 @@
+$(function() {
+	$( "#date-checkin" ).datepicker({
+		numberOfMonths: 2,
+		showButtonPanel: true,
+		dateFormat: "d M, y",
+    });
+	$( "#date-checkout" ).datepicker({
+		numberOfMonths: 2,
+		showButtonPanel: true,
+		dateFormat: "d M, y",
+    });
+});
+
 var map;
 function initialize() {
   var mapOptions = {

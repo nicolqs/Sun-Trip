@@ -38,5 +38,9 @@ fieldset {
 	width:50px;
 	margin:0;
 	padding:0;
+}
 
+
+#search-bar input {
+	text-align: center;
 }
