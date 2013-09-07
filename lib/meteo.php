@@ -1,7 +1,5 @@
 <?php
 
-require_once('const.php');
-
 class Meteo {
 	/**
 	 * Singleton instance
@@ -42,7 +40,7 @@ class Meteo {
 	/**
 	 * return meteo JSON
 	 */
-		public function getMeteo( $decode = false ) {
+	public function getMeteo( $decode = false ) {
 		$meteo = file_get_contents( $this->_meteo_api_endpoint . CITY );
 		if ( $decode ) {
 			$meteo = json_decode($meteo);
