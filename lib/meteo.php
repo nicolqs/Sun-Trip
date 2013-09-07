@@ -40,7 +40,7 @@ class Meteo {
 	 */
 	public function getMeteo() {
 		$forecast = file_get_contents( METEO_API_ENDPOINT . CITY );
-		return $forecast
+		return $forecast;
 	}
 
 	/**
@@ -48,7 +48,7 @@ class Meteo {
 	 */
 	public function getForecast() {
 		$forecast = file_get_contents( FORECAST_API_ENDPOINT . CITY );
-		return $forecast
+		return $forecast;
 	}
 }
 
