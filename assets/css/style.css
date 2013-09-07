@@ -10,19 +10,20 @@ fieldset {
 
 #map-canvas {
 	/*margin: 20px auto;*/
-	width: 80%;
+	width: 70%;
 	height:100%;
 	float:left;
 }
 #right-rail {
-	width:19%;
+	padding: 15px;
+	width:28%;
 	height:100%;
 	float:right;
 }
 #search-bar {
 	position:absolute;
-	top:20px;
-	left:180px;
+	top:25px;
+	left:90px;
 	width:1000px;
 	/*height:100px;*/
 	background-color: #fff;
