@@ -19,8 +19,8 @@ class Meteo {
 	 * Singleton constructor
 	 */
 	private function __construct() {
-		$_meteo_api_endpoint = 'http://api.wunderground.com/api/' . $this->_api_key . '/conditions/q/';
-		$_forecast_api_endpoint = 'http://api.wunderground.com/api/' . $this->_api_key . '/forecast/q/';
+		$this->_meteo_api_endpoint = 'http://api.wunderground.com/api/' . $this->_api_key . '/conditions/q/';
+		$this->_forecast_api_endpoint = 'http://api.wunderground.com/api/' . $this->_api_key . '/forecast/q/';
 	}
 	
 	/**
@@ -43,7 +43,7 @@ class Meteo {
 	 * return meteo JSON
 	 */
 	public function getMeteo() {
-		$meteo = file_get_contents( METEO_API_ENDPOINT . CITY );
+		$meteo = file_get_contents( $this->_meteo_api_endpoint . CITY );
 		return json_decode($meteo);
 	}
 
@@ -51,7 +51,7 @@ class Meteo {
 	 * return forecast JSON
 	 */
 	public function getForecast() {
-		$forecast = file_get_contents( FORECAST_API_ENDPOINT . CITY );
+		$forecast = file_get_contents( $this->_forecast_api_endpoint . CITY );
 		return json_decode($forecast);
 	}
 }

@@ -20,17 +20,20 @@ include 'lib/meteo.php';
 <body>
     <div id="map-canvas"></div>
     <div id="right-rail">
-    	<h1>Sun-Trip</h1>
+        <h1>Sun-Trip</h1>
         <H1>NOW</h1>
     <?php 
 
         $meteoApi = Meteo::getInstance();
         $meteo = $meteoApi->getMeteo();
-        
+        $forecast = $meteoApi->getForecast();
+
+var_dump($forecast);
+
         echo $meteo->current_observation->display_location->city; 
     ?>
         <img src="<?php echo $meteo->current_observation->icon_url; ?>">
-        
+
         <?php echo $meteo->current_observation->temperature_string; ?>
 
         <H1>FORECAST</h1>
@@ -47,9 +50,9 @@ include 'lib/meteo.php';
 
     </div>
     <div id="search-bar">
-    	<form action="" method="POST">
-    		<fieldset>
-			    <legend>Search my trip</legend>
+        <form action="" method="POST">
+            <fieldset>
+                <legend>Search my trip</legend>
                 <ul>
                     <li>
                         Check In: <input type="text" size="10" id="date-checkin">
@@ -58,17 +61,17 @@ include 'lib/meteo.php';
                         Check Out: <input type="text" size="10" id="date-checkout">
                     </li>
                     <li>
-			             Temperature min: <input type="text" size="10" value="75">
+                         Temperature min: <input type="text" size="10" value="75">
                     </li>
                     <li>
-			             Max: <input type="text" size="10" value="90">
+                         Max: <input type="text" size="10" value="90">
                     </li>
                     <li>
-			             Max Budget: <input type="text" size="10" value="500">
+                         Max Budget: <input type="text" size="10" value="500">
                     </li>
                 </ul>
-			  </fieldset>
-    	</form>
+              </fieldset>
+        </form>
     </div>
 </body>
 </html>
