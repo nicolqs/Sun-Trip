@@ -7,8 +7,6 @@ class Ajax {
 			$this->getCityInfo( $_GET['city'] );
 		}
 		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
-		  print_r($_POST);
-		  die();
 			$this->getAllWeather();
 		}
 	}

@@ -92,7 +92,7 @@ class Meteo {
 	}
 
 	public function get_all_cities()
-	{	  
+	{
 	  $data = array();
 	  $yaml_cities = file_get_contents(CITIES_YML);
 	  $cities = Spyc::YAMLLoad($yaml_cities);
@@ -126,7 +126,7 @@ class Meteo {
 	  $avg = intval( ((int)$temp_high + (int)$temp_low ) / 2);
 	  return ($avg);
 	}
- 
+
 	public function get_filtered_data($date_start, $date_end, $min, $max, $sunonly = false)
 	{
 	  // check if it is already cached
@@ -147,23 +147,11 @@ class Meteo {
 	      $avg_temp = $this->get_avg_temp_from_planner($meteo);
 	      if ($avg_temp < $min || $avg_temp > $max)
 		{
-<<<<<<< variant A
-		  continue;
->>>>>>> variant B
 			$meteo = $this->get_meteo_by_zmw($c['zmw'], true);
 			$meteo->zmw = $c['zmw'];
 			$meteo->dataset = $c['dataset'];
 			$meteo->origin_name = $key;
 			$data[] = $meteo;
-####### Ancestor
-			$meteo = $this->get_meteo_by_zmw($c['zmw'],true);
-			$meteo->zmw = $c['zmw'];
-			$meteo->dataset = $c['dataset'];
-			// $to_remove = array( "\n" => "", "\t" => "" );
-			// $meteo = strtr( $meteo, $to_remove );
-			$data[] = $meteo;
-			// var_dump($meteo);
-======= end
 		}
 	      if ($sunonly)
 		{
