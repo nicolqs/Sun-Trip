@@ -26,32 +26,14 @@ require('lib/LookupAirport.php');
     <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-
-<script>
-  function test() {$.ajax({
-  type: "POST",
-      url: "ajax_fare.php",
-      async: false,
-      data: {
-      "from": "sfo",
-	"to": "mia",
-	"fromDate": "09/11/2013",
-	"toDate": "09/21/2013",
-	}
-  }).done(function(ret) {
-      $('#hello').html(ret);
-    });
-}
-</script>
-
     <div id="map-canvas"></div>
 
 
     <div id="right-rail">
+
   <div id="hello"></div>
+
         <?php require_once('./assets/cities/paris.html'); ?>
-  <?php $f = new FlightFare('sfo', '09/11/2013', 'cdg', '09/21/2013'); echo $f->getCheapest(); ?>
-  <br /><a target="_blank" href="<?php echo $f->getTicketURL(); ?>">Buy it!</a>
         <h1>SunTrip</h1>
         <H1>NOW</h1>
     <?php
@@ -62,7 +44,7 @@ require('lib/LookupAirport.php');
 
         echo $meteo->current_observation->display_location->city;
     ?>
-        <img src="<?php echo $meteo->current_observation->icon_url; ?>">
+        <img src="<?php if ( isset( $meteo->current_observation->icon_url ) ) {  echo $meteo->current_observation->icon_url; } ?>">
 
 	  <?php echo $meteo->current_observation->temperature_string; ?>
 
@@ -115,22 +97,22 @@ require('lib/LookupAirport.php');
 </div>
 
 <div class="form-group">
-	  Min
+     <div class="thermometerlow">L</div>
 </div>
 
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Min</label>
-	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;" name="min">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Min" style="width: 50px;" name="min">
 
 </div>
 
 <div class="form-group">
-	  Max
+     <div class="thermometer">H</div>
 </div>
 
 <div class="form-group">
 
-	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;" name="max">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Max" style="width: 50px;" name="max">
 
 </div>
 

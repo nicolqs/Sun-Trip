@@ -47,6 +47,27 @@ input[type=checkbox]:checked + label
     margin-left: 25px;
 }
 
+.thermometer {
+    background-image:url('../img/thermometer.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width:40px;
+    height:40px;
+    color: transparent;
+}
+
+.thermometerlow {
+    background-image:url('../img/thermometer-low.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width:40px;
+    height:40px;
+    color: transparent;
+}
+
+#buyit {
+    background-image:url('../img/buy-button.png');
+}
 
 #search-bar {
     position:absolute;
