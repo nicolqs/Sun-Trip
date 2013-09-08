@@ -1,6 +1,11 @@
 <?php
 
-include 'lib/meteo.php';
+//ini_set('display_errors', 'on');
+
+include('lib/meteo.php');
+require('classes/FlightFare.php');
+require('classes/LookupAirport.php');
+
 // phpinfo();
 ?>
 <!DOCTYPE html>
@@ -24,6 +29,7 @@ include 'lib/meteo.php';
     <div id="map-canvas"></div>
     <div id="right-rail">
         <?php require_once('./pearson/cities/paris.html'); ?>
+  <?php $f = new FlightFare('sfo', '09/11/2013', 'mia', '09/21/2013'); $f->displayCheapest(); ?>
         <h1>SunTrip</h1>
         <H1>NOW</h1>
     <?php
