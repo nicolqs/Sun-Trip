@@ -136,10 +136,8 @@ class Ajax {
 
   protected function getAllWeather() {
     $meteoApi = Meteo::getInstance();
-    $meteo = $meteoApi->get_global_data();
+    $meteo = $meteoApi->get_filtered_data($_POST['start_date'], $_POST['end_date'], $_POST['min'], $_POST['max'], isset( $_POST['sunonly'] ) );
 
-    //       $meteo = $meteoApi->getMeteo();
-    //       $forecast = $meteoApi->getForecast();
 
     $ret = json_decode(toto(), true);
 

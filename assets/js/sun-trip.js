@@ -52,7 +52,7 @@ $(function() {
 			var marker = {};
 			data = $.parseJSON( data );
 
-		    console.log("---->", $("#search-form").serialize());
+		   // console.log("---->", $("#search-form").serialize());
 
 			for ( var i = 0; i < 60; i++ ) {
 				if ( data[i] != undefined && data[i].current_observation != undefined ) {
@@ -67,7 +67,7 @@ $(function() {
 							}
 						}
 
-				    console.log(data[i].current_observation.display_location);
+
 
 					var myLatlng = new google.maps.LatLng(data[i].current_observation.display_location.latitude, data[i].current_observation.display_location.longitude);
 
