@@ -88,6 +88,13 @@ class FlightFare {
     echo '</div>';
   }
 
+  public function getTicketURL() {
+    return 'http://www.expedia.com/Flights-Search?trip='.$this->_flightType.
+      '&leg1=from:'.$this->_from.',to:'.$this->_to.',departure:'.$this->_fromDate.$this->_fromTime.
+      '&leg2=from:'.$this->_to.',to:'.$this->_from.',departure:'.$this->_toDate.$this->_toTime.
+      '&passengers=children:'.$this->_children.',adults:'.$this->_adults.',seniors:'.$this->_seniors.',infantinlap:Y&mode=search';
+  }
+
   protected function _getResults($type, $key, $tripId = NULL) {
     switch ($type) {
     case "leg1":

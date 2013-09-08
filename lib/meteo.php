@@ -20,7 +20,7 @@ class Meteo {
 		$this->_meteo_api_endpoint = 'http://api.wunderground.com/api/' . $this->_api_key . '/conditions/q/';
 		$this->_forecast_api_endpoint = 'http://api.wunderground.com/api/' . $this->_api_key . '/forecast/q/';
 	}
-	
+
 	/**
 	 * Singleton not clonable
 	 */
@@ -47,7 +47,7 @@ class Meteo {
 		}
 		return $meteo;
 	}
-	
+
 	/**
 	 * return meteo JSON by zmw
 	 */
@@ -59,7 +59,7 @@ class Meteo {
 			$meteo = json_decode($meteo);
 		}
 		return $meteo;
-	}	
+	}
 
 	/**
 	 * return forecast JSON
@@ -85,7 +85,7 @@ class Meteo {
 		{
 			$meteo = $this->get_meteo_by_zmw($c['zmw'],true);
 			$meteo->zmw = $c['zmw'];
-			$meteo->dataset = $c['dataset'];	
+			$meteo->dataset = $c['dataset'];
 			// $to_remove = array( "\n" => "", "\t" => "" );
 			// $meteo = strtr( $meteo, $to_remove );
 			$data[] = $meteo;
