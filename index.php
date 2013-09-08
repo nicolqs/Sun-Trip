@@ -85,10 +85,7 @@ include 'lib/meteo.php';
 
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Min</label>
-<div class="input-group">
-	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 40px;">
-	  <span class="input-group-addon">F</span>
-</div>
+	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;">
 
 </div>
 <div class="form-group">
@@ -97,10 +94,7 @@ include 'lib/meteo.php';
 
 <div class="form-group">
 
-<div class="input-group">
-	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 40px;">
-	  <span class="input-group-addon">F</span>
-</div>
+	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;">
 
 </div>
 <div class="form-group">
@@ -109,10 +103,9 @@ include 'lib/meteo.php';
 
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Budget</label>
-<div class="input-group">
-<span class="input-group-addon">$</span>
+
 	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;">
-</div>
+
 </div>
   <button type="submit" class="btn btn-warning">GO</button>
 
