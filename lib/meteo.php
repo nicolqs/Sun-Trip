@@ -133,7 +133,7 @@ class Meteo {
 	  // check if it is already cached
        	  $key = 'planner_' . $date_start . $date_end . '_' . $min . '_' . $max . '_' . (($sunonly) ? 'true' : 'false');
 	  $cache = Cache::getInstance();
-	  if (false && ($data = $cache->get($key)))
+	  if (($data = $cache->get($key)))
 	    {
 	      return ($data);
 	    }
@@ -144,7 +144,7 @@ class Meteo {
 	  foreach ($cities as $c)
 	    {
 	      $meteo = $this->get_planner_by_dates_zmw($date_start . $date_end, $c['zmw'], true);
-	      echo $c['dataset'] . ':' . $meteo->trip->cloud_cover->cond . "\n";
+	      //echo $c['dataset'] . ':' . $meteo->trip->cloud_cover->cond . "\n";
 	      $avg_temp = $this->get_avg_temp_from_planner($meteo);
 	      if ($avg_temp < $min || $avg_temp > $max)
 		{
@@ -157,7 +157,7 @@ class Meteo {
 		      continue;
 		    }
 		}
-	      	      echo '[+] ADDING ' . $c['dataset'] . "\n";
+	      //	      echo '[+] ADDING ' . $c['dataset'] . "\n";
 
               $meteo->zmw = $c['zmw'];
               $meteo->dataset = $c['dataset'];
