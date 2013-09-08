@@ -3,8 +3,8 @@
 //ini_set('display_errors', 'on');
 
 include('lib/meteo.php');
-require('classes/FlightFare.php');
-require('classes/LookupAirport.php');
+require('lib/FlightFare.php');
+require('lib/LookupAirport.php');
 
 // phpinfo();
 ?>
