@@ -47,6 +47,9 @@ input[type=checkbox]:checked + label
     margin-left: 25px;
 }
 
+#buyit {
+    background-image:url('../img/buy-button.png');
+}
 
 #search-bar {
     position:absolute;
