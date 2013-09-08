@@ -7,6 +7,8 @@ class Ajax {
 			$this->getCityInfo( $_GET['city'] );
 		}
 		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
+		  print_r($_POST);
+		  die();
 			$this->getAllWeather();
 		}
 	}
@@ -18,17 +20,17 @@ class Ajax {
 	}
 
 	protected function getAllWeather() {
-		// $meteoApi = Meteo::getInstance();
-		// $meteo = $meteoApi->get_global_data();
+		$meteoApi = Meteo::getInstance();
+		$meteo = $meteoApi->get_global_data();
+
   //       $meteo = $meteoApi->getMeteo();
   //       $forecast = $meteoApi->getForecast();
 
-        // $output = json_encode( array( $meteo, $forecast ) );
+		$output = json_encode($meteo);
 
 
-
-        echo $GLOBALS['meteo'];
-        die();
+		//        echo $GLOBALS['meteo'];
+		die($output);
 	}
 }
 
