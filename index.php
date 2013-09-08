@@ -30,7 +30,7 @@ require('lib/LookupAirport.php');
 <script>
   function test() {$.ajax({
   type: "POST",
-      url: "ajax2.php",
+      url: "ajax_fare.php",
       async: false,
       data: {
       "from": "sfo",

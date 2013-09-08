@@ -70,7 +70,7 @@ $cities = array(
 		'toronto' => 'YYZ',
 	       );
 
-$cacheKey = $_POST['from'].'|'.$_POST['fromDate'].'|'.$_POST['toDate'].'3';
+$cacheKey = $_POST['from'].'|'.$_POST['fromDate'].'|'.$_POST['toDate'].'4';
 $ip = '54.234.98.140';
 $port = 49400;
 
@@ -93,13 +93,14 @@ if ($c = $memcacheObj->get($cacheKey)) {
     $ret = $f->search();
 
     if (!isset($ret[0][0][0]) || !isset($ret[1][0][0])) {
+      file_put_contents($city, "KO");
       continue;
     }
 
     $leg1 = $ret[0][0][0];
     $leg2 = $ret[1][0][0];
 
-    $buf[] = array($city, $leg1['price']);
+    $buf[$city] = $leg1['price'];
 
     file_put_contents($city, "done");
   }
