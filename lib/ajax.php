@@ -144,7 +144,7 @@ class Ajax
   {
     $meteoApi = Meteo::getInstance();
     $weather_html = $meteoApi->city_to_html($date_start, $date_end, $zmw);
-    $city = @file_get_contents( 'http://nico.suntrip.co/assets/cities/' . $city . '.html');
+    $city = @file_get_contents( 'http://www.suntrip.co/assets/cities/' . $city . '.html');
     echo $weather_html . $city;
     die();
   }
