@@ -76,6 +76,7 @@ border-left: 5px ridge green;
 h1, h2 {
     font-family: Interstate,Helvetica,Arial,sans-serif !important;
     margin-bottom: 10px !important;
+    font-weight: bold !important;
 }
 
 p {
@@ -98,7 +99,7 @@ p {
 .restaurants h2 {
     font-size: 20px;
     margin: 0;
-    color: #000000;
+    color: #0A9600;
 }
 
 .todo {
@@ -113,8 +114,9 @@ p {
 }
 
 .todo h2 {
+
     font-size: 20px;
     margin: 0;
-    color: #000000;
+    color: #0A9600;
 
 }
