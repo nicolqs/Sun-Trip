@@ -131,7 +131,7 @@ class Ajax
       }
 
     if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'get_city_info' ) {
-      $this->getCityInfo( $_REQUEST['city'] );
+      $this->getCityInfo( $_REQUEST['city'], $_REQUEST['zmw'], $_REQUEST['date_start'], $_REQUEST['date_end'] );
     }
     if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'get_meteo' )
       {
@@ -140,9 +140,12 @@ class Ajax
       }
   }
 
-  protected function getCityInfo( $city ) {
+  protected function getCityInfo( $city , $zmw, $date_start, $date_end)
+  {
+    $meteoApi = Meteo::getInstance();
+    $weather_html = $meteoApi->city_to_html($date_start, $date_end, $zmw);
     $city = @file_get_contents( 'http://nico.suntrip.co/assets/cities/' . $city . '.html');
-    echo $city;
+    echo $weather_html . $city;
     die();
   }
 
@@ -160,8 +163,9 @@ class Ajax
 	$arr[$tab[0]] = $tab[1];
       }
 
-    $meteo = $meteoApi->get_filtered_data($arr['start_date'], $arr['end_date'], $arr['min'], $arr['max'], isset( $arr['sunonly'] ) );
+    $budget = (int)$_REQUEST['budget'];
 
+    $meteo = $meteoApi->get_filtered_data($arr['start_date'], $arr['end_date'], $arr['min'], $arr['max'], isset( $arr['sunonly'], $budget, $_REQUEST['city']) );
 
     $ret = json_decode(toto(), true);
 

@@ -45,9 +45,9 @@ $(function() {
 	setTimeout( animateCircle, 2000 );
 	google.maps.event.addDomListener(window, 'load', initialize);
 
-    function update_city_data(origin_name)
+    function update_city_data(origin_name, zmw, date_start, date_end)
     {
-	$.post('/ajax.php', {action: "get_city_info", city: origin_name} ).done(
+	$.post('/ajax.php', {action: "get_city_info", city: origin_name, zmw: zmw, date_start:date_start, date_end:date_end} ).done(
 	    
 	    function (data)
 	    {
@@ -87,12 +87,12 @@ $(function() {
 					});
 				markersArray.push(marker[i]);
 
-			var a =	function(data_data) {
+				var a =	function(data_data, zmw, date_start, date_end) {
 				google.maps.event.addListener(marker[i], 'click', function() {
-				    update_city_data(data_data);
+				    update_city_data(data_data, zmw, date_start, date_end);
 				});
 				}
-				a(data[i]['origin_name']);
+				a(data[i]['origin_name'], data[i]['zmw'], $('#date-checkin').val(), $('#date-checkout').val());
 
 
 
