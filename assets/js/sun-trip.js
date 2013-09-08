@@ -57,8 +57,17 @@ $(function() {
 	);
     }
 
+    var markersArray = [];
+    function clearOverlays() {
+	for (var i = 0; i < markersArray.length; i++ ) {
+	    markersArray[i].setMap(null);
+	}
+	markersArray = [];
+    }
+
 	function getMeteoData() {
 		$.post( '/ajax.php', ( $("#search-form").serialize(), { action: "get_meteo", data: $("#search-form").serialize() } ) ).done( function(data){
+		    clearOverlays();
 			var marker = {};
 			data = $.parseJSON( data );
 		    data_data = data;
@@ -76,6 +85,8 @@ $(function() {
 						title: icon,//data[i].current_observation.display_location.full,
 						icon: icon,
 					});
+				markersArray.push(marker[i]);
+
 			var a =	function(data_data) {
 				google.maps.event.addListener(marker[i], 'click', function() {
 				    update_city_data(data_data);
