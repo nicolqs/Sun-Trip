@@ -3,9 +3,18 @@
 class Ajax {
 	public function __construct() {
 
-var_dump($_POST);		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
+		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_city_info' ) {
+			$this->getCityInfo( $_POST['city'] );
+		}
+		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
 			$this->getAllWeather();
 		}
+	}
+
+	protected function getCityInfo( $city ) {
+		  $city = @file_get_contents( '/assets/cities/' . $city );
+		  echo $city;
+		  die();
 	}
 
 	protected function getAllWeather() {
