@@ -28,7 +28,7 @@ def generate_city_content(city)
   #flights
   html << "<h1>#{city.capitalize()}</h1>"
   html << "<div class='flights'>"
-  postData = Net::HTTP.post_form(URI.parse('http://www.suntrip.co/ajax_fare.php'), {'from'=>'SFO', 'fromDate' => '09/11/2013', 'toDate' => '09/21/2013', 'to' => city})
+  postData = Net::HTTP.post_form(URI.parse('http://www.suntrip.co/ajax_fare.php'), {'from'=>'SFO', 'fromDate' => '09/13/2013', 'toDate' => '09/21/2013', 'to' => city})
   html << postData.body
   html << "</div>"
 
