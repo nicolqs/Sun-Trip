@@ -12,16 +12,31 @@ class FlightFare {
   private $_fromTime = 'TANYT';
   private $_toTime = 'TANYT';
   private $_flightType = "roundtrip";
+  private $_cacheKey = NULL;
 
   private $_cache = array();
+  private $_memcacheObj = NULL;
 
   public function __construct($from, $fromDate, $to, $toDate) {
+    // Connect to memcache
+    $ip = '54.234.98.140';
+    $port = 49400;
+
+    $this->_memcacheObj = new Memcache;
+    $this->_memcacheObj->connect($ip, $port);
+
+    // Set local members
     $this->_from = LookupAirport::lookupAirport($from);
     $this->_to = LookupAirport::lookupAirport($to);
     $this->_fromDate = $fromDate;
     $this->_toDate = $toDate;
-    $this->_cache[$this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate] = array();
-    echo $this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate."\n";
+
+    $this->_cacheKey = $this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate;
+    if ($c = $this->_memcacheObj->get($this->_cacheKey)) {
+      $this->_cache[$this->_cacheKey] = unserialize($c);
+    } else {
+      $this->_cache[$this->_cacheKey] = array();
+    }
   }
 
   public function setAdults($n) {
@@ -53,14 +68,31 @@ class FlightFare {
     $leg1 = $this->_getResults('leg1', $key);
     $leg2 = $this->_getResults('leg2', $leg1[1], $leg1[2]);
 
-    $this->_cache[$this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate] = array($leg1, $leg2);
-    return array($leg1, $leg2);
+    $this->_cache[$this->_cacheKey] = array($leg1, $leg2);
+
+    $this->_memcacheObj->set($this->_cacheKey, serialize($this->_cache[$this->_cacheKey]));
+    return $this->_cache[$this->_cacheKey];
   }
 
   public function displayCheapest() {
     $ret = $this->search();
-    print_r($ret[0][0][0]);
-    print_r($ret[1][0][0]);
+    $leg1 = $ret[0][0][0];
+    $leg2 = $ret[1][0][0];
+
+    echo '<div>';
+    echo '<strong>'.$leg1['price'].'</strong> with <strong>'.
+      $leg1['airlineName'].'</strong> '.
+      $leg1['segments'][0]['departureAirport'].' <=> '.$leg1['segments'][1]['arrivalAirport'].
+      ' ('.(sizeof($leg1['segments']) - 1).' stop'.(sizeof($leg1['segments']) > 2 ? 's' : '').')<br />';
+    echo 'From '.$leg1['segments'][0]['departureDate'].' to '.$leg1['segments'][1]['arrivalDate'];
+    echo '</div>';
+  }
+
+  public function getTicketURL() {
+    return 'http://www.expedia.com/Flights-Search?trip='.$this->_flightType.
+      '&leg1=from:'.$this->_from.',to:'.$this->_to.',departure:'.$this->_fromDate.$this->_fromTime.
+      '&leg2=from:'.$this->_to.',to:'.$this->_from.',departure:'.$this->_toDate.$this->_toTime.
+      '&passengers=children:'.$this->_children.',adults:'.$this->_adults.',seniors:'.$this->_seniors.',infantinlap:Y&mode=search';
   }
 
   protected function _getResults($type, $key, $tripId = NULL) {

@@ -1,6 +1,11 @@
 <?php
 
-include 'lib/meteo.php';
+//ini_set('display_errors', 'on');
+
+include('lib/meteo.php');
+require('lib/FlightFare.php');
+require('lib/LookupAirport.php');
+
 // phpinfo();
 ?>
 <!DOCTYPE html>
@@ -12,6 +17,7 @@ include 'lib/meteo.php';
     <meta name='robots' content='noindex,nofollow' />
     <link rel='stylesheet' id='sun-trip'  href='/assets/css/style.css' type='text/css' media='all' />
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/dist/css/bootstrap.css">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script src="/assets/js/jquery-1.9.1.js"></script>
     <script src="/assets/js/jquery-ui.js"></script>
@@ -23,6 +29,8 @@ include 'lib/meteo.php';
     <div id="map-canvas"></div>
     <div id="right-rail">
         <?php require_once('./pearson/cities/paris.html'); ?>
+  <?php $f = new FlightFare('sfo', '09/11/2013', 'mia', '09/21/2013'); $f->displayCheapest(); ?>
+  <br /><a target="_blank" href="<?php echo $f->getTicketURL(); ?>">Buy it!</a>
         <h1>SunTrip</h1>
         <H1>NOW</h1>
     <?php
@@ -50,32 +58,72 @@ include 'lib/meteo.php';
     } ?>
 
     </div>
-    <div id="search-bar">
-        <form action="" method="POST" id="search-form">
-            <fieldset>
-                <legend>Search my trip</legend>
-                <ul>
-                    <li>
-                        Check In: <input type="text" size="10" id="date-checkin">
-                    </li>
-                    <li>
-                        Check Out: <input type="text" size="10" id="date-checkout">
-                    </li>
-                    <li>
-                         Temperature min: <input type="text" size="10" value="75">
-                    </li>
-                    <li>
-                         Max: <input type="text" size="10" value="90">
-                    </li>
-                    <li>
-                         Max Budget: <input type="text" size="10" value="500">
-                    </li>
-                    <li>
-                        <input type="submit">
-                    </li>
-                </ul>
-              </fieldset>
-        </form>
+
+    <div id="search-bar" >
+
+<form class="form-inline" role="form" action="" method="POST" id="search-form">
+
+<div class="form-group">
+	  <div id="logo"><img src="assets/img/logo.png" height="40px"></div>
+</div>
+<div class="form-group">
+	  Departure city
+</div>
+<div class="form-group">
+	  <input type="" class="form-control" id="" placeholder="City" style="width: 60px;">
+</div>
+<div class="form-group">
+	  Start date
+</div>
+<div class="form-group">
+	  <label class="sr-only" for="exampleInputEmail2">Start date</label>
+	  <input type="" class="form-control" id="date-checkin" placeholder="Date" style="width: 100px;">
+</div>
+<div class="form-group">
+	  End date
+</div>
+<div class="form-group">
+	  <label class="sr-only" for="exampleInputEmail2">End date</label>
+	  <input type="" class="form-control" id="date-checkout" placeholder="Date"  style="width: 100px;">
+</div>
+<div class="form-group">
+	  Min
+</div>
+
+<div class="form-group">
+	  <label class="sr-only" for="exampleInputEmail2">Min</label>
+	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;">
+
+</div>
+<div class="form-group">
+	  Max
+</div>
+
+<div class="form-group">
+
+	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;">
+
+</div>
+<div class="form-group">
+	  Budget
+</div>
+
+<div class="form-group">
+	  <label class="sr-only" for="exampleInputEmail2">Budget</label>
+
+	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;">
+
+</div>
+  <button type="submit" class="btn btn-warning">GO</button>
+
+<br />
+<div class="checkbox" id="checkman">
+    <label>
+      <input type="checkbox"> Sun only
+    </label>
+  </div>
+</form>
+
     </div>
 </body>
 </html>
