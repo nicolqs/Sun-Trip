@@ -25,6 +25,14 @@ fieldset {
 
 }
 
+#footer {
+    position:absolute;
+    height: 70px;
+    width: 70%;
+    bottom:0px;
+    background-color: #F7F7F9;
+}
+
 input[type=checkbox] {
   display:none;
 }
