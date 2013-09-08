@@ -117,7 +117,7 @@ require('lib/LookupAirport.php');
 </div>
 
 <div class="form-group">
-  <input type='checkbox' name='sunonly' value='valuable' id="sunonly" name="sunonly"/><label for="sunonly"></label>
+  <input type='checkbox' name='sunonly' value='valuable' id="sunonly" name="sunonly" title="click me!"/><label for="sunonly"></label>
 </div>
 
 <div class="form-group" id="budget_div"  style="color:#afafaf;">
