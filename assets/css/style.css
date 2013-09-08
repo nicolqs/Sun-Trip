@@ -84,8 +84,8 @@ input[type=checkbox]:checked + label
     background-image:url('../img/buy-button.png');
     background-repeat: no-repeat;
     background-position: center center;
-    height: 38px;
-    width : 174px;
+    font-size: 40px;
+    color: #0A9600;
 }
 
 #search-bar {
