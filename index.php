@@ -44,7 +44,7 @@ require('lib/LookupAirport.php');
 
         echo $meteo->current_observation->display_location->city;
     ?>
-        <img src="<?php echo $meteo->current_observation->icon_url; ?>">
+        <img src="<?php if ( isset( $meteo->current_observation->icon_url ) ) {  echo $meteo->current_observation->icon_url; } ?>">
 
 	  <?php echo $meteo->current_observation->temperature_string; ?>
 
