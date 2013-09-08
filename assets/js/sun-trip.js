@@ -5,7 +5,8 @@ $(function() {
 		var mapOptions = {
 			zoom: 3,
 			center: new google.maps.LatLng(30, -38),
-			mapTypeId: google.maps.MapTypeId.ROADMAP
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		        mapTypeControl: false
 		};
 		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
@@ -74,7 +75,7 @@ $(function() {
 					});
 				    google.maps.event.addListener(marker[i], "click", function() {
 					$.get('/ajax.php', { action: "get_city_info", city: "moscow" }).done(function(data) {
-					    $("#right-rail").html(data);
+					    $("#right-rail").empty().html(data);
 					});
 				    });
 				}
