@@ -10,7 +10,9 @@ require_once('lib/ajax.php');
 $m = Meteo::getInstance();
 
 
+echo "'0913', '0921', 50, 80, false\n";
 $res = $m->get_filtered_data('0913', '0921', 50, 80, false);
+echo "DONE\n";
 $res = $m->get_filtered_data('0913', '0921', 60, 80, false);
 $res = $m->get_filtered_data('0913', '0921', 70, 80, false);
 $res = $m->get_filtered_data('0913', '0921', 50, 90, false);
