@@ -118,22 +118,26 @@ function toto() {
   return json_encode($buf);
 }
 
-class Ajax {
-  public function __construct() {
+class Ajax
+{
+  public function __construct()
+  {
+    
+    if (isset($_REQUEST['data']))
+      {
+	parse_str($_REQUEST['data'], $tmp);
+	$_REQUEST['city'] = $tmp['city'];
+	$_REQUEST['budget'] = $tmp['budget'];
+      }
 
-    if (isset($_POST['data'])) {
-      parse_str($_POST['data'], $tmp);
-      $_POST['city'] = $tmp['city'];
-      $_POST['budget'] = $tmp['budget'];
+    if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'get_city_info' ) {
+      $this->getCityInfo( $_REQUEST['city'] );
     }
-
-    if ( isset( $_GET['action'] ) && $_GET['action'] == 'get_city_info' ) {
-      $this->getCityInfo( $_GET['city'] );
-    }
-    if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
-
-      $this->getAllWeather();
-    }
+    if ( isset( $_REQUEST['action'] ) && $_REQUEST['action'] == 'get_meteo' )
+      {
+	
+	$this->getAllWeather();
+      }
   }
 
   protected function getCityInfo( $city ) {
@@ -142,18 +146,19 @@ class Ajax {
     die();
   }
 
-  protected function getAllWeather() {
+  protected function getAllWeather()
+  {
     $meteoApi = Meteo::getInstance();
+    
+    $data = $_REQUEST['data'];
 
-    $data = $_POST['data'];
-$arr = array();
+    $arr = array();
     $data = explode('&', $data);
-
-foreach ($data as $d) {
-	$tab = explode('=', $d);
-
+    foreach ($data as $num => $d)
+      {
+	$tab = explode('=', $d);	
 	$arr[$tab[0]] = $tab[1];
-}
+      }
 
     $meteo = $meteoApi->get_filtered_data($arr['start_date'], $arr['end_date'], $arr['min'], $arr['max'], isset( $arr['sunonly'] ) );
 
