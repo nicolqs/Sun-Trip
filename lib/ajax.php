@@ -1,6 +1,6 @@
 <?php
 
-ini_set('display_errors', 'on');
+//ini_set('display_errors', 'on');
 
 require_once('FlightFare.php');
 require_once('LookupAirport.php');
@@ -74,6 +74,13 @@ $memcacheObj = Cache::getInstance();
 
 
 function toto() {
+  if (!isset($_POST['start_date']))
+    $_POST['start_date'] = '09/11/2013';
+  if (!isset($_POST['end_date']))
+    $_POST['end_date'] = '09/21/2013';
+
+  global $cities, $memcacheObj;
+
   $cacheKey = $_POST['city'].'|'.(isset($_POST['to']) ? '|'.$_POST['to'] : '');
   $buf = array();
   foreach ($cities as $city => $code) {
@@ -104,45 +111,49 @@ function toto() {
 }
 
 class Ajax {
-	public function __construct() {
+  public function __construct() {
 
-		if ( isset( $_GET['action'] ) && $_GET['action'] == 'get_city_info' ) {
-			$this->getCityInfo( $_GET['city'] );
-		}
-		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
+    if (isset($_POST['data'])) {
+      parse_str($_POST['data'], $tmp);
+      $_POST['city'] = $tmp['city'];
+      $_POST['budget'] = $tmp['budget'];
+    }
 
-			$this->getAllWeather();
-		}
-	}
+    if ( isset( $_GET['action'] ) && $_GET['action'] == 'get_city_info' ) {
+      $this->getCityInfo( $_GET['city'] );
+    }
+    if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
 
-	protected function getCityInfo( $city ) {
-		  $city = @file_get_contents( 'http://nico.suntrip.co/assets/cities/' . $city . '.html');
-		  echo $city;
-		  die();
-	}
+      $this->getAllWeather();
+    }
+  }
 
-	protected function getAllWeather() {
-		$meteoApi = Meteo::getInstance();
-		$meteo = $meteoApi->get_global_data();
+  protected function getCityInfo( $city ) {
+    $city = @file_get_contents( 'http://nico.suntrip.co/assets/cities/' . $city . '.html');
+    echo $city;
+    die();
+  }
 
-  //       $meteo = $meteoApi->getMeteo();
-  //       $forecast = $meteoApi->getForecast();
+  protected function getAllWeather() {
+    $meteoApi = Meteo::getInstance();
+    $meteo = $meteoApi->get_global_data();
 
-		print_r($_POST);
-		exit;
-		$ret = toto();
+    //       $meteo = $meteoApi->getMeteo();
+    //       $forecast = $meteoApi->getForecast();
 
-		foreach ($meteo as $key => $elem) {
-		  if (isset($_POST['budget']) && $_POST['budget'] > 0 && isset($ret[$elem['origin_city']]) && $ret[$elem['origin_city']] > $_POST['budget']) {
-		    unset($meteo[$key]);
-		  }
-		}
+    $ret = json_decode(toto(), true);
 
-		$output = json_encode($meteo);
+    foreach ($meteo as $key => $elem) {
+      if (isset($_POST['budget']) && $_POST['budget'] > 0 && isset($ret[$elem->origin_city]) && $ret[$elem->origin_city] > $_POST['budget']) {
+	unset($meteo[$key]);
+      }
+    }
 
-		//        echo $GLOBALS['meteo'];
-		die($output);
-	}
+    $output = json_encode($meteo);
+
+    //        echo $GLOBALS['meteo'];
+    die($output);
+  }
 }
 
 $ajax = new Ajax();
