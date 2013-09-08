@@ -17,6 +17,8 @@ include 'lib/meteo.php';
     <script src="/assets/js/jquery-1.9.1.js"></script>
     <script src="/assets/js/jquery-ui.js"></script>
     <script src="/assets/js/sun-trip.js"></script>
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="map-canvas"></div>
