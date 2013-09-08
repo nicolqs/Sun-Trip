@@ -25,6 +25,10 @@ fieldset {
 
 }
 
+#price {
+    font-size:20pt;
+}
+
 #footer {
     position:absolute;
     height: 70px;
