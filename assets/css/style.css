@@ -47,6 +47,14 @@ input[type=checkbox]:checked + label
     margin-left: 25px;
 }
 
+.thermometer {
+    background-image:url('../img/thermometer.png');
+}
+
+.flake {
+    background-image:url('../img/flake.png');
+}
+
 #buyit {
     background-image:url('../img/buy-button.png');
 }
