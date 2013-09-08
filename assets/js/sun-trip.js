@@ -5,7 +5,8 @@ $(function() {
 		var mapOptions = {
 			zoom: 3,
 			center: new google.maps.LatLng(30, -38),
-			mapTypeId: google.maps.MapTypeId.ROADMAP
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		        mapTypeControl: false
 		};
 		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
