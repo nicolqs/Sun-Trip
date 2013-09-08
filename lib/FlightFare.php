@@ -88,7 +88,7 @@ class FlightFare {
       $leg1['segments'][0]['departureAirport'].' <=> '.$leg1['segments'][sizeof($leg1['segments']) - 1]['arrivalAirport'].
       ' ('.(sizeof($leg1['segments']) - 1).' stop'.(sizeof($leg1['segments']) > 2 ? 's' : '').')<br />';
 
-    $buf .= 'From '.$leg1['segments'][0]['departureDate'].' to '.$leg1['segments'][sizeof($leg1['segments']) - 1]['arrivalDate'];
+    //    $buf .= 'From '.$leg1['segments'][0]['departureDate'].' to '.$leg1['segments'][sizeof($leg1['segments']) - 1]['arrivalDate'];
     $buf .= '</div>';
 
     return $buf;
