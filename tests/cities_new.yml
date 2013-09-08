@@ -1,0 +1,425 @@
+berlin:
+  name: berlin
+  dataset: tt_berlin
+  zmw: 00000.10.10389
+  latitude: 52.531624
+  longitude: 13.425669
+chicago:
+  name: chicago
+  dataset: tt_chicag
+  zmw: 60290.1.99999
+  latitude: 41.879444
+  longitude: -87.643333
+miami:
+  name: miami
+  dataset: tt_miami
+  zmw: 33010.2.99999
+  latitude: 25.787222
+  longitude: -80.347717
+sydney:
+  name: sydney
+  dataset: tt_sydney
+  zmw: 00000.1.94767
+  latitude: -33.95000076
+  longitude: 151.17999268
+hong_kong:
+  name: hong_kong
+  dataset: tt_honkon_pearson
+  zmw: 00000.1.45007
+  latitude: 22.30999947
+  longitude: 113.91000366
+delhi:
+  name: delhi
+  dataset: tt_delhi
+  zmw: 00000.8.42182
+  latitude: 28.56999969
+  longitude: 77.12000275
+washington_dc:
+  name: washington_dc
+  dataset: tt_wasdc
+  zmw: 20001.1.99999
+  latitude: 38.909843
+  longitude: -77.006042
+tallinn:
+  name: tallinn
+  dataset: tt_tallin
+  zmw: 00000.1.26038
+  latitude: 59.40999985
+  longitude: 24.82999992
+san_francisco:
+  name: san_francisco
+  dataset: tt_sanfra
+  zmw: 94101.1.99999
+  latitude: 37.773285
+  longitude: -122.417725
+honolulu:
+  name: honolulu
+  dataset: tt_honolu
+  zmw: 96801.1.99999
+  latitude: 21.315399
+  longitude: -157.797470
+copenhagen:
+  name: copenhagen
+  dataset: tt_copenh
+  zmw: 00000.1.06180
+  latitude: 55.63000107
+  longitude: 12.67000008
+san_antonio:
+  name: san_antonio
+  dataset: tt_sanant
+  zmw: 78201.1.99999
+  latitude: 29.493326
+  longitude: -98.600060
+malta:
+  name: malta
+  dataset: tt_malta
+  zmw: 00000.1.16597
+  latitude: 35.84999847
+  longitude: 14.47999954
+saint_petersburg:
+  name: saint_petersburg
+  dataset: tt_stpet
+  zmw: 00000.1.26063
+  latitude: 59.97000122
+  longitude: 30.29999924
+mexico:
+  name: mexico
+  dataset: tt_mexico
+  zmw: 00000.26.76679
+  latitude: 19.405268
+  longitude: -99.094818
+prague:
+  name: prague
+  dataset: tt_prague
+  zmw: 00000.1.11518
+  latitude: 50.09999847
+  longitude: 14.27999973
+phuket:
+  name: phuket
+  dataset: tt_phuket
+  zmw: 00000.1.48565
+  latitude: 8.11999989
+  longitude: 98.31999969
+iceland:
+  name: iceland
+  dataset: tt_icelan
+  zmw: 00000.1.04030
+  latitude: 64.12999725
+  longitude: -21.89999962
+new_orleans:
+  name: new_orleans
+  dataset: tt_neworl
+  zmw: 70112.1.99999
+  latitude: 29.975603
+  longitude: -90.082054
+cape_town:
+  name: cape_town
+  dataset: tt_captow
+  zmw: 00000.1.68816
+  latitude: -33.97999954
+  longitude: 18.60000038
+istanbul:
+  name: istanbul
+  dataset: tt_istanb
+  zmw: 00000.1.17060
+  latitude: 40.97000122
+  longitude: 28.81999969
+barcelona:
+  name: barcelona
+  dataset: tt_barcel
+  zmw: 00000.1.08181
+  latitude: 41.27999878
+  longitude: 2.06999993
+scotland:
+  name: scotland
+  dataset: tt_scotla
+  zmw: 00000.25.03160
+  latitude: 55.945240
+  longitude: -3.233934
+cuba:
+  name: cuba
+  dataset: tt_cuba
+  zmw: 00000.1.78224
+  latitude: 22.97999954
+  longitude: -82.40000153
+tuscania:
+  name: tuscania
+  dataset: tt_tuscan
+  zmw: 00000.45.16216
+  latitude: 42.464375
+  longitude: 11.821934
+singapore:
+  name: singapore
+  dataset: tt_singap
+  zmw: 00000.1.48698
+  latitude: 1.37000000
+  longitude: 103.98000336
+paris:
+  name: paris
+  dataset: tt_paris
+  zmw: 00000.98.07150
+  latitude: 48.851727
+  longitude: 2.335968
+dublin:
+  name: dublin
+  dataset: tt_dublin
+  zmw: 00000.1.03969
+  latitude: 53.43000031
+  longitude: -6.25000000
+dominican_republic:
+  name: dominican_republic
+  dataset: tt_domrep
+  zmw: 00000.1.78486
+  latitude: 18.489002
+  longitude: -69.844719
+puerto_rico:
+  name: puerto_rico
+  dataset: tt_pueric
+  zmw: g2000.1.99999
+  latitude: 
+  longitude: 
+athens:
+  name: athens
+  dataset: tt_athens
+  zmw: 00000.1.16716
+  latitude: 37.906891
+  longitude: 23.716951
+rome:
+  name: rome
+  dataset: tt_rome
+  zmw: 00000.1.16240
+  latitude: 41.863281
+  longitude: 12.502114
+bangkok:
+  name: bangkok
+  dataset: tt_bangko
+  zmw: 00000.16.48456
+  latitude: 13.793689
+  longitude: 100.394722
+seattle:
+  name: seattle
+  dataset: tt_seattl
+  zmw: 98101.1.99999
+  latitude: 47.616558
+  longitude: -122.341240
+moscow:
+  name: moscow
+  dataset: tt_moscow
+  zmw: 00000.1.27612
+  latitude: 55.681690
+  longitude: 37.565937
+los_angeles:
+  name: los_angeles
+  dataset: tt_losang
+  zmw: 90001.1.99999
+  latitude: 33.995155
+  longitude: -118.347275
+venice:
+  name: venice
+  dataset: tt_venice
+  zmw: 00000.1.16105
+  latitude: 45.50000000
+  longitude: 12.32999992
+munich:
+  name: munich
+  dataset: tt_munich
+  zmw: 00000.1.10866
+  latitude: 48.13000107
+  longitude: 11.69999981
+las_vegas:
+  name: las_vegas
+  dataset: tt_lasveg_pearson
+  zmw: 89044.2.99999
+  latitude: 36.000999
+  longitude: -115.078003
+vancouver:
+  name: vancouver
+  dataset: tt_vanvic
+  zmw: 00000.1.71892
+  latitude: 49.18000031
+  longitude: -123.16999817
+london:
+  name: london
+  dataset: tt_london
+  zmw: 00000.1.03772
+  latitude: 51.47999954
+  longitude: -0.44999999
+lisbon:
+  name: lisbon
+  dataset: tt_lisbon
+  zmw: 00000.1.08536
+  latitude: 38.77999878
+  longitude: -9.13000011
+buenos_aires:
+  name: buenos_aires
+  dataset: tt_bueair
+  zmw: 00000.1.87582
+  latitude: -34.56999969
+  longitude: -58.41999817
+naples:
+  name: naples
+  dataset: tt_napama
+  zmw: 00000.1.16289
+  latitude: 40.84999847
+  longitude: 14.30000019
+boston:
+  name: boston
+  dataset: tt_boston
+  zmw: 02101.1.99999
+  latitude: 42.407410
+  longitude: -71.035759
+budapest:
+  name: budapest
+  dataset: tt_budape
+  zmw: 00000.6.12838
+  latitude: 47.478283
+  longitude: 19.046686
+rio_de_janeiro:
+  name: rio_de_janeiro
+  dataset: tt_riode
+  zmw: 00000.1.83755
+  latitude: -22.89999962
+  longitude: -43.16999817
+newyork:
+  name: newyork
+  dataset: tt_newyor
+  zmw: 10001.5.99999
+  latitude: 40.746399
+  longitude: -73.981598
+cyprus:
+  name: cyprus
+  dataset: tt_cyprus
+  zmw: 00000.18.17607
+  latitude: 35.111275
+  longitude: 33.301235
+tokyo:
+  name: tokyo
+  dataset: tt_tokyo
+  zmw: 00000.1.47671
+  latitude: 35.54999924
+  longitude: 139.77999878
+marrakech:
+  name: marrakech
+  dataset: tt_marrak
+  zmw: 00000.1.60230
+  latitude: 31.62000084
+  longitude: -8.02999973
+algarve:
+  name: algarve
+  dataset: tt_algarv
+  zmw: 00000.23.08554
+  latitude: 37.02000046
+  longitude: -7.96999979
+crete:
+  name: crete
+  dataset: tt_crete
+  zmw: 00000.19.16754
+  latitude: 35.33000183
+  longitude: 25.18000031
+madrid:
+  name: madrid
+  dataset: tt_madrid
+  zmw: 00000.1.08221
+  latitude: 40.45000076
+  longitude: -3.54999995
+gran_canaria:
+  name: gran_canaria
+  dataset: tt_gracan
+  zmw: 00000.6.60030
+  latitude: 27.93000031
+  longitude: -15.38000011
+milan:
+  name: milan
+  dataset: tt_millak
+  zmw: 00000.1.16066
+  latitude: 45.61999893
+  longitude: 8.72999954
+vienna:
+  name: vienna
+  dataset: tt_vienna
+  zmw: 00000.1.11034
+  latitude: 48.193100
+  longitude: 16.385303
+seoul:
+  name: seoul
+  dataset: tt_seoul
+  zmw: 00000.1.47117
+  latitude: 37.526917
+  longitude: 126.825661
+amsterdam:
+  name: amsterdam
+  dataset: tt_amster
+  zmw: 00000.1.06240
+  latitude: 52.29999924
+  longitude: 4.76999998
+toronto:
+  name: toronto
+  dataset: tt_toront
+  zmw: 00000.1.71265
+  latitude: 43.63000107
+  longitude: -79.40000153
+dallas:
+  name: dallas
+  zmw: 75201.1.99999
+  latitude: 32.809147
+  longitude: -96.764114
+caracas:
+  name: caracas
+  zmw: 00000.1.80414
+  latitude: 10.449938
+  longitude: -66.855965
+lima:
+  name: lima
+  zmw: 00000.1.84628
+  latitude: -12.00000000
+  longitude: -77.12000275
+sucre:
+  name: sucre
+  zmw: 00000.1.85283
+  latitude: -19.02000046
+  longitude: -65.26999664
+niamey:
+  name: niamey
+  zmw: 00000.1.61052
+  latitude: 13.47999954
+  longitude: 2.17000008
+monrovia:
+  name: monrovia
+  zmw: 00000.6.65602
+  latitude: 6.23000002
+  longitude: -10.35999966
+beijing:
+  name: beijing
+  zmw: 00000.1.54511
+  latitude: 40.06999969
+  longitude: 116.58999634
+irkutsk:
+  name: irkutsk
+  zmw: 00000.1.30710
+  latitude: 52.27000046
+  longitude: 104.34999847
+minneapolis:
+  name: minneapolis
+  zmw: 55401.1.99999
+  latitude: 44.960403
+  longitude: -93.284660
+bangalore:
+  name: bangalore
+  zmw: 00000.1.43295
+  latitude: 12.96666718
+  longitude: 77.58333588
+novosibirsk:
+  name: novosibirsk
+  zmw: 00000.1.29634
+  latitude: 55.02000046
+  longitude: 82.62999725
+bogota:
+  name: bogota
+  zmw: 00000.1.80222
+  latitude: 4.69999981
+  longitude: -74.12999725
+santiago:
+  name: santiago
+  zmw: 00000.1.85574
+  latitude: -33.38000107
+  longitude: -70.77999878

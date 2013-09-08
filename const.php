@@ -1,7 +1,8 @@
 <?php
 const API_KEY = 'a3377ceb5414edef';
 const CITY = 'CA/San_Francisco.json';
-const CITIES_YML = 'assets/yml/cities.yml';
+//const CITIES_YML = 'assets/yml/cities.yml';
+const CITIES_YML = 'assets/yml/cities_new.yml';
 
 // memcached frio memcachedasaservice.com
 const MEMCACHED_IP = '54.234.98.140';

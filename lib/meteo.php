@@ -130,9 +130,9 @@ class Meteo {
 	public function get_filtered_data($date_start, $date_end, $min, $max, $sunonly = false)
 	{
 	  // check if it is already cached
-	  $key = 'planner_' . $date_start . $date_end . '_' . $min . '_' . $max . '_' . (($sunonly) ? 'true' : 'false');
+       	  $key = 'planner_' . $date_start . $date_end . '_' . $min . '_' . $max . '_' . (($sunonly) ? 'true' : 'false');
 	  $cache = Cache::getInstance();
-	  if (($data = $cache->get($key)))
+	  if (false && ($data = $cache->get($key)))
 	    {
 	      return ($data);
 	    }
@@ -143,15 +143,11 @@ class Meteo {
 	  foreach ($cities as $c)
 	    {
 	      $meteo = $this->get_planner_by_dates_zmw($date_start . $date_end, $c['zmw'], true);
-	      //echo $c['dataset'] . ':' . $meteo->trip->cloud_cover->cond . "\n";
+	      echo $c['dataset'] . ':' . $meteo->trip->cloud_cover->cond . "\n";
 	      $avg_temp = $this->get_avg_temp_from_planner($meteo);
 	      if ($avg_temp < $min || $avg_temp > $max)
 		{
-			$meteo = $this->get_meteo_by_zmw($c['zmw'], true);
-			$meteo->zmw = $c['zmw'];
-			$meteo->dataset = $c['dataset'];
-			$meteo->origin_name = $key;
-			$data[] = $meteo;
+		  continue;
 		}
 	      if ($sunonly)
 		{
@@ -160,10 +156,15 @@ class Meteo {
 		      continue;
 		    }
 		}
-	      //	      echo '[+] ADDING ' . $c['dataset'] . "\n";
+	      	      echo '[+] ADDING ' . $c['dataset'] . "\n";
 
               $meteo->zmw = $c['zmw'];
               $meteo->dataset = $c['dataset'];
+	      $meteo->latitude = $c['latitude'];
+	      $meteo->longitude = $c['longitude'];
+	      $meteo->origin_name = $c['name'];
+	      $meteo->icon = strtolower(str_replace(' ', '', $meteo->trip->cloud_cover->cond));
+	      $meteo->temperature = $avg_temp;
               $data[] = $meteo;
 
 	      // if ($i++ > 10) break;
