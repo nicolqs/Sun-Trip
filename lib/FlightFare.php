@@ -1,5 +1,7 @@
 <?php
 
+require_once('cache.php');
+
 class FlightFare {
   protected $_from = NULL;
   protected $_to = NULL;
@@ -19,11 +21,7 @@ class FlightFare {
 
   public function __construct($from, $fromDate, $to, $toDate) {
     // Connect to memcache
-    $ip = '54.234.98.140';
-    $port = 49400;
-
-    $this->_memcacheObj = new Memcache;
-    $this->_memcacheObj->connect($ip, $port);
+    $this->_memcacheObj = Cache::getInstance();
 
     // Set local members
     $this->_from = LookupAirport::lookupAirport($from);

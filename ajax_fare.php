@@ -6,6 +6,7 @@ header('Content-Type: application/json');
 
 require('lib/FlightFare.php');
 require('lib/LookupAirport.php');
+require_once('lib/cache.php');
 
 $cities = array(
 		'berlin' => 'TXL',
@@ -70,12 +71,9 @@ $cities = array(
 		'toronto' => 'YYZ',
 	       );
 
-$cacheKey = $_POST['from'].'|'.$_POST['fromDate'].'|'.$_POST['toDate'].'4';
-$ip = '54.234.98.140';
-$port = 49400;
+$cacheKey = $_POST['from'].'|'.$_POST['fromDate'].'|'.$_POST['toDate'].'5';
 
-$memcacheObj = new Memcache();
-$memcacheObj->connect($ip, $port);
+$memcacheObj = Cache::getInstance();
 
 if ($c = $memcacheObj->get($cacheKey)) {
   echo $c;

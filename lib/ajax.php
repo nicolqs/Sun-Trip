@@ -3,8 +3,8 @@
 class Ajax {
 	public function __construct() {
 
-		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_city_info' ) {
-			$this->getCityInfo( $_POST['city'] );
+		if ( isset( $_GET['action'] ) && $_GET['action'] == 'get_city_info' ) {
+			$this->getCityInfo( $_GET['city'] );
 		}
 		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
 			$this->getAllWeather();
@@ -12,7 +12,7 @@ class Ajax {
 	}
 
 	protected function getCityInfo( $city ) {
-		  $city = @file_get_contents( '/assets/cities/' . $city );
+		  $city = @file_get_contents( 'http://nico.suntrip.co/assets/cities/' . $city . '.html');
 		  echo $city;
 		  die();
 	}
