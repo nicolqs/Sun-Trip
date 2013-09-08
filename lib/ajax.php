@@ -142,9 +142,9 @@ class Ajax {
     $ret = json_decode(toto(), true);
 
     foreach ($meteo as $key => $elem) {
-      $n = trim($ret[$elem->origin_city], '$');
+      $n = trim($ret[$elem->origin_name], '$');
       $n = (int)str_replace(',', '', $n);
-      if (isset($_POST['budget']) && $_POST['budget'] > 0 && isset($ret[$elem->origin_city]) && $ret[$elem->origin_city] > $_POST['budget']) {
+      if (isset($_POST['budget']) && $_POST['budget'] > 0 && isset($ret[$elem->origin_name]) && $ret[$elem->origin_name] > $_POST['budget']) {
 	unset($meteo[$key]);
       }
     }

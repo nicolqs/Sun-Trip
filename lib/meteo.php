@@ -110,7 +110,7 @@ class Meteo {
 	      $meteo = $this->get_meteo_by_zmw($c['zmw'], true);
 	      $meteo->zmw = $c['zmw'];
 	      $meteo->dataset = $c['dataset'];
-	      $meteo->origin_city = $key;
+	      $meteo->origin_name = $key;
 	      $data[] = $meteo;
 	    }
 	  return ($data);
