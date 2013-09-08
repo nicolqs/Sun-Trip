@@ -1,3 +1,3 @@
 <?php
 
-// $m = new Memcache();
+$m = new Memcache();

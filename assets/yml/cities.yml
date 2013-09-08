@@ -178,3 +178,30 @@ amsterdam:
 toronto:
   dataset: tt_toront
   zmw: 00000.1.71265
+dallas:
+  dataset:
+  zmw: 75201.1.99999
+caracas:
+  dataset:
+  zmw: 00000.1.80414
+lima:
+  dataset:
+  zmw: 00000.1.84628
+sucre:
+  dataset:
+  zmw: 00000.1.85283
+niamey:
+  dataset:
+  zmw: 00000.1.61052
+monrovia:
+  dataset:
+  zmw: 00000.6.65602
+beijing:
+  dataset:
+  zmw: 00000.1.54511
+irkutsk:
+  dataset:
+  zmw: 00000.1.30710
+minneapolis:
+  dataset:
+  zmw: 55401.1.99999
