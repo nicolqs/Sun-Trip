@@ -84,6 +84,10 @@ if ($c = $memcacheObj->get($cacheKey)) {
 
 if (isset($_POST['to'])) {
 
+  if (isset($cities[$_POST['to']])) {
+    $_POST['to'] = $cities[$_POST['to']];
+  }
+
   $f = new FlightFare($_POST['from'], $_POST['fromDate'], $_POST['to'], $_POST['toDate']);
   echo $f->getCheapest();
   echo '<br /><a id="buyit" target="_blank" href="'.$f->getTicketURL().'">Buy it!</a>';
