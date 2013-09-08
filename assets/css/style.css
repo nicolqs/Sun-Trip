@@ -35,17 +35,16 @@ input[type=checkbox] + label
     height: 40px;
     width: 40px;
     display:inline-block;
-    padding: 0 0 0 0px;
 }
 
 input[type=checkbox]:checked + label
 {
     background-image:url('../img/clear-on.png');
-    height: 40px;
+    height:40px;
     width:40px;
     display:inline-block;
-    padding: 0 0 0 0px;
 }
+
 
 #search-bar {
     position:absolute;
