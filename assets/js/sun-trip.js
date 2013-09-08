@@ -29,9 +29,7 @@ $(function() {
 			}],
 			map: map
 		});
-
 	}
-
 
 	function animateCircle() {
 		var count = 0;
@@ -47,11 +45,23 @@ $(function() {
 	setTimeout( animateCircle, 2000 );
 	google.maps.event.addDomListener(window, 'load', initialize);
 
+    function update_city_data(origin_name)
+    {
+	$.post('/ajax.php', {action: "get_city_info", city: origin_name} ).done(
+	    
+	    function (data)
+	    {
+		$('#right-rail').html(data);
+	    }
+	    
+	);
+    }
+
 	function getMeteoData() {
 		$.post( '/ajax.php', ( $("#search-form").serialize(), { action: "get_meteo", data: $("#search-form").serialize() } ) ).done( function(data){
 			var marker = {};
 			data = $.parseJSON( data );
-
+		    data_data = data;
 			for ( var i = 0; i < 60; i++ ) {
 			    if ( data[i] != undefined ) {
 
@@ -66,11 +76,17 @@ $(function() {
 						title: icon,//data[i].current_observation.display_location.full,
 						icon: icon,
 					});
+			var a =	function(data_data) {
+				google.maps.event.addListener(marker[i], 'click', function() {
+				    update_city_data(data_data);
+				});
 				}
+				a(data[i]['origin_name']);
 
+
+
+				}
 			}
-			
-		
         });
 	}
 
