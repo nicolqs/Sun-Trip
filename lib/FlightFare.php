@@ -31,7 +31,7 @@ class FlightFare {
     $this->_fromDate = $fromDate;
     $this->_toDate = $toDate;
 
-    $this->_cacheKey = $this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate;
+    $this->_cacheKey = $this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate.'1';
     if ($c = $this->_memcacheObj->get($this->_cacheKey)) {
       $this->_cache[$this->_cacheKey] = unserialize($c);
     } else {
@@ -52,8 +52,8 @@ class FlightFare {
   }
 
   public function search() {
-    if (isset($this->_cache[$this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate]) &&  sizeof($this->_cache[$this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate]) > 0) {
-      return $this->_cache[$this->_from.'|'.$this->_to.'|'.$this->_fromDate.'|'.$this->_toDate];
+    if (isset($this->_cache[$this->_cacheKey]) &&  sizeof($this->_cache[$this->_cacheKey]) > 0) {
+      return $this->_cache[$this->_cacheKey];
     }
 
     $url = 'http://www.expedia.com/Flights-Search?trip='.$this->_flightType.
@@ -74,18 +74,26 @@ class FlightFare {
     return $this->_cache[$this->_cacheKey];
   }
 
-  public function displayCheapest() {
+  public function getCheapest() {
     $ret = $this->search();
+
+    if (!isset($ret[0][0][0]) || !isset($ret[1][0][0])) {
+      return NULL;
+    }
+
     $leg1 = $ret[0][0][0];
     $leg2 = $ret[1][0][0];
 
-    echo '<div>';
-    echo '<strong>'.$leg1['price'].'</strong> with <strong>'.
+    $buf = '<div>';
+    $buf .= '<strong>'.$leg1['price'].'</strong> with <strong>'.
       $leg1['airlineName'].'</strong> '.
-      $leg1['segments'][0]['departureAirport'].' <=> '.$leg1['segments'][1]['arrivalAirport'].
+      $leg1['segments'][0]['departureAirport'].' <=> '.$leg1['segments'][sizeof($leg1['segments']) - 1]['arrivalAirport'].
       ' ('.(sizeof($leg1['segments']) - 1).' stop'.(sizeof($leg1['segments']) > 2 ? 's' : '').')<br />';
-    echo 'From '.$leg1['segments'][0]['departureDate'].' to '.$leg1['segments'][1]['arrivalDate'];
-    echo '</div>';
+
+    $buf .= 'From '.$leg1['segments'][0]['departureDate'].' to '.$leg1['segments'][sizeof($leg1['segments']) - 1]['arrivalDate'];
+    $buf .= '</div>';
+
+    return $buf;
   }
 
   public function getTicketURL() {
@@ -136,7 +144,9 @@ class FlightFare {
 	$ret[$i]['segments'][$j]['arrivalTime'] = $segment['arrivalTime'];
 	$j++;
       }
-      $i++;
+      if (sizeof($ret[$i]) > 0 && sizeof($ret[$i]['segments']) > 0 && $ret[$i]['airlineName'] != '-1') {
+	$i++;
+      }
     }
     return array($ret, isset($results['continuationId']) ? $results['continuationId'] : NULL, $tripId);
   }
