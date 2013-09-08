@@ -31,18 +31,18 @@ input[type=checkbox] {
 
 input[type=checkbox] + label
 {
-    background: #999;
-    height: 16px;
-    width: 16px;
+    background-image:url('../img/clear-off.gif');
+    height: 40px;
+    width: 40px;
     display:inline-block;
     padding: 0 0 0 0px;
 }
 
 input[type=checkbox]:checked + label
 {
-    background: #0080FF;
-    height: 16px;
-    width: 16px;
+    background-image:url('../img/clear-on.gif');
+    height: 40px;
+    width:40px;
     display:inline-block;
     padding: 0 0 0 0px;
 }
