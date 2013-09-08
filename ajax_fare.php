@@ -1,8 +1,10 @@
 <?php
 
-//ini_set('display_errors', 'on');
+if (!isset($_POST['to'])) {
+  header('Content-Type: application/json');
+}
 
-header('Content-Type: application/json');
+//ini_set('display_errors', 'on');
 
 require('lib/FlightFare.php');
 require('lib/LookupAirport.php');
@@ -69,15 +71,25 @@ $cities = array(
 		'seoul' => 'SEL',
 		'amsterdam' => 'AMS',
 		'toronto' => 'YYZ',
-	       );
+		);
 
-$cacheKey = $_POST['from'].'|'.$_POST['fromDate'].'|'.$_POST['toDate'].'5';
 
 $memcacheObj = Cache::getInstance();
 
+$cacheKey = $_POST['from'].'|'.$_POST['fromDate'].'|'.$_POST['toDate'].(isset($_POST['to']) ? '|'.$_POST['to'] : '').'5';
 if ($c = $memcacheObj->get($cacheKey)) {
   echo $c;
+  exit;
+}
+
+if (isset($_POST['to'])) {
+
+  $f = new FlightFare('sfo', '09/11/2013', 'cdg', '09/21/2013');
+  echo $f->getCheapest();
+  echo '<br /><a target="_blank" href="'.$f->getTicketURL().'">Buy it!</a>';
+
 } else {
+
   $buf = array();
   foreach ($cities as $city => $code) {
     if (!empty($code)) {
@@ -104,4 +116,5 @@ if ($c = $memcacheObj->get($cacheKey)) {
   }
   echo json_encode($buf);
   $memcacheObj->set($cacheKey, json_encode($buf));
+
 }

@@ -33,11 +33,27 @@ require('lib/LookupAirport.php');
       url: "ajax_fare.php",
       async: false,
       data: {
-      "from": "sfo",
-	"to": "mia",
+	"from": "sfo",
 	"fromDate": "09/11/2013",
 	"toDate": "09/21/2013",
 	}
+  }).done(function(ret) {
+      $('#hello').html(ret);
+    });
+}
+</script>
+
+<script>
+  function test2() {$.ajax({
+  type: "POST",
+      url: "ajax_fare.php",
+      async: false,
+      data: {
+	"from": "sfo",
+	"to": "mia",
+	"fromDate": "09/11/2013",
+	"toDate": "09/21/2013",
+      }
   }).done(function(ret) {
       $('#hello').html(ret);
     });
@@ -48,10 +64,10 @@ require('lib/LookupAirport.php');
 
 
     <div id="right-rail">
+
   <div id="hello"></div>
+
         <?php require_once('./assets/cities/paris.html'); ?>
-  <?php $f = new FlightFare('sfo', '09/11/2013', 'cdg', '09/21/2013'); echo $f->getCheapest(); ?>
-  <br /><a target="_blank" href="<?php echo $f->getTicketURL(); ?>">Buy it!</a>
         <h1>SunTrip</h1>
         <H1>NOW</h1>
     <?php
