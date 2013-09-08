@@ -127,7 +127,7 @@ require('lib/LookupAirport.php');
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Budget</label>
 
-	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;" name"budget">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;" name="budget">
 
 </div>
 

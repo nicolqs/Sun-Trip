@@ -13,6 +13,7 @@ class Meteo {
 	protected $_api_key = 'fa55ab773cbb5883';
 	protected $_forecast_api_endpoint;
 	protected $_meteo_api_endpoint;
+	protected $_origin_name;
 
 	/**
 	 * Singleton constructor
@@ -146,7 +147,23 @@ class Meteo {
 	      $avg_temp = $this->get_avg_temp_from_planner($meteo);
 	      if ($avg_temp < $min || $avg_temp > $max)
 		{
+<<<<<<< variant A
 		  continue;
+>>>>>>> variant B
+			$meteo = $this->get_meteo_by_zmw($c['zmw'], true);
+			$meteo->zmw = $c['zmw'];
+			$meteo->dataset = $c['dataset'];
+			$meteo->origin_name = $key;
+			$data[] = $meteo;
+####### Ancestor
+			$meteo = $this->get_meteo_by_zmw($c['zmw'],true);
+			$meteo->zmw = $c['zmw'];
+			$meteo->dataset = $c['dataset'];
+			// $to_remove = array( "\n" => "", "\t" => "" );
+			// $meteo = strtr( $meteo, $to_remove );
+			$data[] = $meteo;
+			// var_dump($meteo);
+======= end
 		}
 	      if ($sunonly)
 		{
