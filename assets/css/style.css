@@ -20,6 +20,9 @@ fieldset {
 	height:100%;
 	float:right;
 overflow: scroll;
+
+border-left: 5px ridge green;
+
 }
 #search-bar {
 	position:absolute;
@@ -64,4 +67,54 @@ overflow: scroll;
 
 #checkman {
     margin-left: 550px;
+}
+
+.restaurants {
+
+}
+
+h1, h2 {
+    font-family: Interstate,Helvetica,Arial,sans-serif !important;
+    margin-bottom: 10px !important;
+}
+
+p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.todo img {
+    border: solid 1px;
+    margin-bottom: 10px;
+}
+
+.restaurants h1 {
+    font-size: 32px;
+    margin: 0;
+    color: #000000;
+    letter-spacing: -2px;
+}
+
+.restaurants h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #000000;
+}
+
+.todo {
+
+}
+
+.todo h1 {
+    font-size: 32px;
+    margin: 0;
+    color: #000000;
+    letter-spacing: -2px;
+}
+
+.todo h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #000000;
+
 }
