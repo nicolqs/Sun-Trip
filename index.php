@@ -102,7 +102,7 @@ require('lib/LookupAirport.php');
 
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Min</label>
-	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Min" style="width: 50px;" name="min">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Min" style="width: 56px;" name="min">
 
 </div>
 
@@ -112,7 +112,7 @@ require('lib/LookupAirport.php');
 
 <div class="form-group">
 
-	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Max" style="width: 55px;" name="max">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Max" style="width: 56px;" name="max">
 
 </div>
 
