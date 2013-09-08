@@ -25,6 +25,10 @@ fieldset {
 
 }
 
+#price {
+    font-size:20pt;
+}
+
 #footer {
     position:absolute;
     height: 70px;
@@ -78,6 +82,10 @@ input[type=checkbox]:checked + label
 
 #buyit {
     background-image:url('../img/buy-button.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-size: 75px;
+    color: transparent;
 }
 
 #search-bar {

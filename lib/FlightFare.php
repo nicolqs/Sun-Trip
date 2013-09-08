@@ -83,7 +83,7 @@ class FlightFare {
     $leg2 = $ret[1][0][0];
 
     $buf = '<div>';
-    $buf .= '<strong>'.$leg1['price'].'</strong> with <strong>'.
+    $buf .= '<strong><div id="price">'.$leg1['price'].'</div></strong> with <strong>'.
       $leg1['airlineName'].'</strong> '.
       $leg1['segments'][0]['departureAirport'].' <=> '.$leg1['segments'][sizeof($leg1['segments']) - 1]['arrivalAirport'].
       ' ('.(sizeof($leg1['segments']) - 1).' stop'.(sizeof($leg1['segments']) > 2 ? 's' : '').')<br />';
