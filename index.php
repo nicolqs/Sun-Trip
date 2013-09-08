@@ -136,6 +136,6 @@ require('lib/LookupAirport.php');
 </form>
 
     </div>
-
+    <div id="footer">Powered by <img="wunderground.png"> + <img="pearson.png"></div>
 </body>
 </html>
