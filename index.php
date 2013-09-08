@@ -24,16 +24,6 @@ require('lib/LookupAirport.php');
     <script src="/assets/js/sun-trip.js"></script>
     <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-2927534-25', 'suntrip.co');
-  ga('send', 'pageview');
-
-</script>
 </head>
 <body>
     <div id="map-canvas"></div>
@@ -147,5 +137,16 @@ require('lib/LookupAirport.php');
 
     </div>
     <div id="footer">Powered by <a href="http://www.wunderground.com/"><img src="assets/img/wunderground.png"></a> + <a href="http://www.pearson.com/"><img src="assets/img/pearson.png"></a> at <a href="http://techcrunch.com/events/disrupt-sf-2013/event-info/"><img src="assets/img/tc.png"></a> by <a href="www.while42.org">while42 SF team</a></div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2927534-25', 'suntrip.co');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>
