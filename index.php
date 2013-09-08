@@ -74,7 +74,7 @@ require('lib/LookupAirport.php');
 </div>
 
 <div class="form-group">
-	  <input type="" class="form-control" id="" placeholder="City" style="width: 60px;">
+	  <input type="text" class="form-control" id="" placeholder="City" style="width: 60px;" name="city">
 </div>
 
 <div class="form-group">
@@ -83,7 +83,7 @@ require('lib/LookupAirport.php');
 
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Start date</label>
-	  <input type="" class="form-control" id="date-checkin" placeholder="Date" style="width: 100px;">
+	  <input type="text" class="form-control" id="date-checkin" placeholder="Date" style="width: 100px;" name="start_date">
 </div>
 
 <div class="form-group">
@@ -92,7 +92,7 @@ require('lib/LookupAirport.php');
 
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">End date</label>
-	  <input type="" class="form-control" id="date-checkout" placeholder="Date"  style="width: 100px;">
+	  <input type="text" class="form-control" id="date-checkout" placeholder="Date"  style="width: 100px;" name="end_date">
 </div>
 
 <div class="form-group">
@@ -101,7 +101,7 @@ require('lib/LookupAirport.php');
 
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Min</label>
-	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;" name="min">
 
 </div>
 
@@ -111,7 +111,7 @@ require('lib/LookupAirport.php');
 
 <div class="form-group">
 
-	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;" name="max">
 
 </div>
 
@@ -126,7 +126,7 @@ require('lib/LookupAirport.php');
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Budget</label>
 
-	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;" name"budget">
 
 </div>
 
