@@ -57,7 +57,7 @@ input[type=checkbox]:checked + label
 }
 
 .thermometerlow {
-    background-image:url('../img/.thermometer-low.png');
+    background-image:url('../img/thermometer-low.png');
     background-repeat: no-repeat;
     background-position: center center;
     width:40px;
