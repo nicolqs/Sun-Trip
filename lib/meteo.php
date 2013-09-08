@@ -80,12 +80,16 @@ class Meteo {
 		$data = array();
 		$yaml_cities = file_get_contents(CITIES_YML);
 		$cities = Spyc::YAMLLoad($yaml_cities);
+		$i = 0;
 		foreach ($cities as $c)
 		{
-			$meteo = get_meteo_by_zmw($c['zmw']);
-			$meteo['zmw'] = $c['zmw'];
-			$meteo['dataset'] = $c['dataset'];	
+			$meteo = $this->get_meteo_by_zmw($c['zmw'],true);
+			$meteo->zmw = $c['zmw'];
+			$meteo->dataset = $c['dataset'];	
+			// $to_remove = array( "\n" => "", "\t" => "" );
+			// $meteo = strtr( $meteo, $to_remove );
 			$data[] = $meteo;
+			// var_dump($meteo);
 		}
 		return ($data);
 	}
