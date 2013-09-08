@@ -113,12 +113,12 @@ $(function() {
 	$( "#date-checkin" ).datepicker({
 		numberOfMonths: 2,
 		showButtonPanel: true,
-		dateFormat: "d M, y",
+		dateFormat: "m/d/y",
     });
 	$( "#date-checkout" ).datepicker({
 		numberOfMonths: 2,
 		showButtonPanel: true,
-		dateFormat: "d M, y",
+		dateFormat: "m/d/y",
     });
 
   function test() {$.ajax({
