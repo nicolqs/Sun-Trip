@@ -112,7 +112,7 @@ require('lib/LookupAirport.php');
 
 <div class="form-group">
 
-	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Max" style="width: 50px;" name="max">
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Max" style="width: 55px;" name="max">
 
 </div>
 

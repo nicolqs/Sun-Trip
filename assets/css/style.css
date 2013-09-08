@@ -73,7 +73,7 @@ input[type=checkbox]:checked + label
     position:absolute;
     top:25px;
     left:90px;
-    width:1030px;
+    width:1035px;
     /*height:100px;*/
     background-color: #fff;
 
@@ -104,7 +104,7 @@ input[type=checkbox]:checked + label
 }
 
 #logo {
-    
+
 }
 
 .tinquietes {
