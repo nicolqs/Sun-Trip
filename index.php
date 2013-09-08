@@ -27,6 +27,8 @@ require('lib/LookupAirport.php');
 </head>
 <body>
     <div id="map-canvas"></div>
+
+
     <div id="right-rail">
         <?php require_once('./pearson/cities/paris.html'); ?>
   <?php $f = new FlightFare('sfo', '09/11/2013', 'mia', '09/21/2013'); $f->displayCheapest(); ?>
@@ -43,7 +45,7 @@ require('lib/LookupAirport.php');
     ?>
         <img src="<?php echo $meteo->current_observation->icon_url; ?>">
 
-        <?php echo $meteo->current_observation->temperature_string; ?>
+	  <?php echo $meteo->current_observation->temperature_string; ?>
 
         <H1>FORECAST</h1>
         <?php
@@ -61,31 +63,38 @@ require('lib/LookupAirport.php');
 
     <div id="search-bar" >
 
-<form class="form-inline" role="form" action="" method="POST" id="search-form">
+	  <form class="form-inline" role="form" action="" method="POST" id="search-form">
 
-<div class="form-group">
+	  <div class="form-group">
 	  <div id="logo"><img src="assets/img/logo.png" height="40px"></div>
-</div>
+	  </div>
+
 <div class="form-group">
 	  Departure city
 </div>
+
 <div class="form-group">
 	  <input type="" class="form-control" id="" placeholder="City" style="width: 60px;">
 </div>
+
 <div class="form-group">
 	  Start date
 </div>
+
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">Start date</label>
 	  <input type="" class="form-control" id="date-checkin" placeholder="Date" style="width: 100px;">
 </div>
+
 <div class="form-group">
 	  End date
 </div>
+
 <div class="form-group">
 	  <label class="sr-only" for="exampleInputEmail2">End date</label>
 	  <input type="" class="form-control" id="date-checkout" placeholder="Date"  style="width: 100px;">
 </div>
+
 <div class="form-group">
 	  Min
 </div>
@@ -95,6 +104,7 @@ require('lib/LookupAirport.php');
 	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;">
 
 </div>
+
 <div class="form-group">
 	  Max
 </div>
@@ -104,6 +114,7 @@ require('lib/LookupAirport.php');
 	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;">
 
 </div>
+
 <div class="form-group">
 	  Budget
 </div>
@@ -114,9 +125,11 @@ require('lib/LookupAirport.php');
 	  <input type="" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;">
 
 </div>
+
   <button type="submit" class="btn btn-warning">GO</button>
 
 <br />
+
 <div class="checkbox" id="checkman">
     <label>
       <input type="checkbox"> Sun only
@@ -125,5 +138,6 @@ require('lib/LookupAirport.php');
 </form>
 
     </div>
+
 </body>
 </html>
