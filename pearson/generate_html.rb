@@ -24,6 +24,7 @@ def generate_city_content(city)
   end
 
   # restaurants
+  html << "<div class='restaurants'>"
   html << "<h1>Restaurants</h1>"
   html << "All prices for a three-course meal for one with half a bottle of wine."
   restaurant_count = 0
@@ -36,7 +37,7 @@ def generate_city_content(city)
       info = query_api("travel/places/#{restaurant['id']}?")['result']
       if info['address'] && info['price']
         html << "<p>"
-        html << "<b>#{@coder.encode(info['title'], :named)}</b><br>"
+        html << "<h2>#{@coder.encode(info['title'], :named)}</h2><br>"
         html << "Price: #{@coder.encode(info['price']['range'], :named)}<br>"
         html << "Location: : #{@coder.encode(info['address'], :named)}<br>"
         html << "</p>"
@@ -44,6 +45,7 @@ def generate_city_content(city)
     end
   end
 
+  html << "<div class='todo'>"
   html << "<h1>TODOs</h1>"
   todo_counter = 0
   # TODO in the city
@@ -58,7 +60,7 @@ def generate_city_content(city)
         unless place['images'][0]['title'].to_s.empty?
           todo_counter += 1
           html << '<p>'
-          html << "<b>#{@coder.encode(place['images'][0]['title'].to_s, :named)}</b><br>"
+          html << "<h2>#{@coder.encode(place['images'][0]['title'].to_s, :named)}</h2><br>"
           html << "<img src=\"#{api_resource(place['images'][0]['image'])}\" style=\"width:100%;\"><br>"
           html << "#{@coder.encode(place['text'], :named)}<br>"
           html << '</p>'
