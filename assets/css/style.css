@@ -19,17 +19,16 @@ fieldset {
 	width:30%;
 	height:100%;
 	float:right;
-	background-color: #F9F9F9;
-overflow: scroll;
-
-border-left: 5px ridge green;
+	background-color: #F9F9FF  !important;
+	overflow: scroll;
+	border-left: 5px ridge green;
 
 }
 #search-bar {
 	position:absolute;
 	top:25px;
 	left:90px;
-	width:1000px;
+	width:1030px;
 	/*height:100px;*/
 	background-color: #fff;
 
@@ -120,4 +119,12 @@ p {
     margin: 0;
     color: #0A9600;
 
+}
+
+#budget_div {
+    margin-left:25px;
+}
+
+#go_button {
+    margin-left: 15px;
 }

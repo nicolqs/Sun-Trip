@@ -116,6 +116,10 @@ require('lib/LookupAirport.php');
 </div>
 
 <div class="form-group">
+      <input type="checkbox"> Sun only
+</div>
+
+<div class="form-group" id="budget_div">
 	  Budget
 </div>
 
@@ -126,15 +130,8 @@ require('lib/LookupAirport.php');
 
 </div>
 
-  <button type="submit" class="btn btn-warning">GO</button>
+  <button type="submit" class="btn btn-success" id="go_button">GO</button>
 
-<br />
-
-<div class="checkbox" id="checkman">
-    <label>
-      <input type="checkbox"> Sun only
-    </label>
-  </div>
 </form>
 
     </div>
