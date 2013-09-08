@@ -30,7 +30,7 @@ require('lib/LookupAirport.php');
 
 
     <div id="right-rail">
-        <?php require_once('./pearson/cities/paris.html'); ?>
+        <?php require_once('./assets/cities/paris.html'); ?>
   <?php $f = new FlightFare('sfo', '09/11/2013', 'mia', '09/21/2013'); $f->displayCheapest(); ?>
   <br /><a target="_blank" href="<?php echo $f->getTicketURL(); ?>">Buy it!</a>
         <h1>SunTrip</h1>
