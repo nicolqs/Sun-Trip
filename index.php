@@ -136,7 +136,7 @@ require('lib/LookupAirport.php');
 </form>
 
     </div>
-    <div id="footer">Powered by <a href="http://www.wunderground.com/"><img src="assets/img/wunderground.png"></a> + <a href="http://www.pearson.com/"><img src="assets/img/pearson.png"></a> at <a href="http://techcrunch.com/events/disrupt-sf-2013/event-info/"><img src="assets/img/tc.png"></a> by <a href="www.while42.org">while42 SF team</a></div>
+    <div id="footer">Powered by <a target="_blank" href="http://www.wunderground.com/"><img src="assets/img/wunderground.png"></a> + <a target="_blank" href="http://www.pearson.com/"><img src="assets/img/pearson.png"></a> at <a target="_blank" href="http://techcrunch.com/events/disrupt-sf-2013/event-info/"><img src="assets/img/tc.png"></a> by <a target="_blank" href="http://www.while42.org">while42 SF team</a></div>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
