@@ -101,13 +101,13 @@ require('lib/LookupAirport.php');
 </div>
 
 <div class="form-group">
-	  <label class="sr-only" for="exampleInputEmail2">Min</label>
+	  <label class="sr-only" id="flake" for="exampleInputEmail2">Min</label>
 	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="" style="width: 50px;" name="min">
 
 </div>
 
 <div class="form-group">
-	  Max
+	  <label class="sr-only" id="flake" for="exampleInputEmail2" id="thermometer">Max</label>
 </div>
 
 <div class="form-group">
