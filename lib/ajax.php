@@ -79,9 +79,17 @@ function toto() {
   if (!isset($_POST['end_date']))
     $_POST['end_date'] = '09/21/2013';
 
+  if (!isset($_POST['budget']))
+    $_POST['budget'] = 0;
+
+  $_POST['budget'] = (int)$_POST['budget'];
+
   global $cities, $memcacheObj;
 
   $cacheKey = $_POST['city'].'|'.(isset($_POST['to']) ? '|'.$_POST['to'] : '');
+  if ($c = $memcacheObj->get($cacheKey)) {
+    return $c;
+  }
   $buf = array();
   foreach ($cities as $city => $code) {
     if (!empty($code)) {
@@ -142,9 +150,12 @@ class Ajax {
     $ret = json_decode(toto(), true);
 
     foreach ($meteo as $key => $elem) {
+      if (!isset($ret[$elem->origin_name])) {
+	continue;
+      }
       $n = trim($ret[$elem->origin_name], '$');
       $n = (int)str_replace(',', '', $n);
-      if (isset($_POST['budget']) && $_POST['budget'] > 0 && isset($ret[$elem->origin_name]) && $ret[$elem->origin_name] > $_POST['budget']) {
+      if ($n > 0 && isset($_POST['budget']) && $_POST['budget'] > 0 && $n > (int)$_POST['budget'])  {
 	unset($meteo[$key]);
       }
     }
