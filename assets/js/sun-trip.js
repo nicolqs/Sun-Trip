@@ -52,24 +52,13 @@ $(function() {
 			var marker = {};
 			data = $.parseJSON( data );
 
-		   // console.log("---->", $("#search-form").serialize());
-
 			for ( var i = 0; i < 60; i++ ) {
-				if ( data[i] != undefined && data[i].current_observation != undefined ) {
+			    if ( data[i] != undefined ) {
 
-						if ( data[i].current_observation.icon_url.indexOf("/nt_") ) {
-							r = data[i].current_observation.icon_url.split('/');
-							if ( ! r[6].indexOf("nt_") ) {
-								icon = '/assets/img/' + r[6].substr(3, r[6].length);
-
-							} else {
-								icon = data[i].current_observation.icon_url ;
-							}
-						}
+				icon = '/assets/img/' + data[i].icon + '.gif';
 
 
-
-					var myLatlng = new google.maps.LatLng(data[i].current_observation.display_location.latitude, data[i].current_observation.display_location.longitude);
+					var myLatlng = new google.maps.LatLng(data[i].latitude, data[i].longitude);
 
 					marker[i] = new google.maps.Marker({ 
 						position: myLatlng,
