@@ -4,6 +4,8 @@ require 'htmlentities'
 require 'unicode'
 require 'json'
 require 'yaml'
+require 'net/http'
+require 'uri'
 $KCODE = 'UTF-8'
 
 @API_URI = "http://api.pearson.com/v2/"
@@ -22,6 +24,13 @@ def generate_city_content(city)
   def api_resource(content)
     "http://api.pearson.com#{content}?apikey=bDpAVJlCztk9kPkLcfjqvAknoktNPGUp"
   end
+
+  #flights
+  html << "<div class='flights'>"
+  html << "<h1>Flights</h1>"
+  postData = Net::HTTP.post_form(URI.parse('http://www.suntrip.co/ajax_fare.php'), {'from'=>'SFO', 'fromDate' => '09/11/2013', 'toDate' => '09/21/2013', 'to' => city})
+  html << postData.body
+  html << "</div>"
 
   # restaurants
   html << "<div class='restaurants'>"
