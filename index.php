@@ -30,7 +30,7 @@ require('lib/LookupAirport.php');
 <script>
   function test() {$.ajax({
   type: "POST",
-      url: "ajax2.php",
+      url: "ajax_fare.php",
       async: false,
       data: {
       "from": "sfo",
@@ -50,7 +50,7 @@ require('lib/LookupAirport.php');
     <div id="right-rail">
   <div id="hello"></div>
         <?php require_once('./assets/cities/paris.html'); ?>
-  <?php $f = new FlightFare('sfo', '09/11/2013', 'mia', '09/21/2013'); $f->displayCheapest(); ?>
+  <?php $f = new FlightFare('sfo', '09/11/2013', 'mia', '09/21/2013'); echo $f->getCheapest(); ?>
   <br /><a target="_blank" href="<?php echo $f->getTicketURL(); ?>">Buy it!</a>
         <h1>SunTrip</h1>
         <H1>NOW</h1>
