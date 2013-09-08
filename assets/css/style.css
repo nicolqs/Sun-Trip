@@ -24,13 +24,36 @@ fieldset {
 	border-left: 5px ridge green;
 
 }
+
+input[type=checkbox] {
+  display:none;
+}
+
+input[type=checkbox] + label
+{
+    background-image:url('../img/clear-off.png');
+    height: 40px;
+    width: 40px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+input[type=checkbox]:checked + label
+{
+    background-image:url('../img/clear-on.png');
+    height: 40px;
+    width:40px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
 #search-bar {
-	position:absolute;
-	top:25px;
-	left:90px;
-	width:1030px;
-	/*height:100px;*/
-	background-color: #fff;
+    position:absolute;
+    top:25px;
+    left:90px;
+    width:1030px;
+    /*height:100px;*/
+    background-color: #fff;
 
     background-color: #F7F7F9;
     border: 1px solid #E1E1E8;
