@@ -55,8 +55,8 @@ results.each do |h|
       break
     end
     if place['images']
-      todo_counter += 1
       unless place['images'][0]['title'].to_s.empty?
+        todo_counter += 1
         html << '<p>'
         html << "<b>#{coder.encode(place['images'][0]['title'].to_s, :named)}</b><br>"
         html << "<img src=\"#{api_resource(place['images'][0]['image'])}\" style=\"width:90%;\"><br>"
