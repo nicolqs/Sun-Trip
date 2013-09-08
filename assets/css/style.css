@@ -31,6 +31,9 @@ fieldset {
     width: 70%;
     bottom:0px;
     background-color: #F7F7F9;
+    font-size: 20pt;
+    padding-top: 10px;
+    text-align:center;
 }
 
 input[type=checkbox] {
