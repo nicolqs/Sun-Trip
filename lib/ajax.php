@@ -2,7 +2,8 @@
 
 class Ajax {
 	public function __construct() {
-		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
+
+var_dump($_POST);		if ( isset( $_POST['action'] ) && $_POST['action'] == 'get_meteo' ) {
 			$this->getAllWeather();
 		}
 	}
@@ -14,6 +15,7 @@ class Ajax {
   //       $forecast = $meteoApi->getForecast();
 
         // $output = json_encode( array( $meteo, $forecast ) );
+
 
 
         echo $GLOBALS['meteo'];

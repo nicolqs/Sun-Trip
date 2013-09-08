@@ -47,12 +47,13 @@ $(function() {
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 	function getMeteoData() {
-		$.post( '/ajax.php', { action: "get_meteo" }, function(data){
+	    $.post( '/ajax.php', $("#search-form").serialize() ).done( function(data){
             var marker = {};
-            data = JSON.parse(data);
+            //data = $.parseJSON( data );
+		data = {};
 
 			for ( var i = 0; i < 60; i++ ) {
-				if (  data[i].current_observation != undefined ) {
+				if ( data[i] != undefined && data[i].current_observation != undefined ) {
 
 						if ( data[i].current_observation.icon_url.indexOf("/nt_") ) {
 							r = data[i].current_observation.icon_url.split('/');
