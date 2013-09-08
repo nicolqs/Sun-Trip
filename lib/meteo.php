@@ -130,6 +130,11 @@ class Meteo {
 
 	public function get_filtered_data($date_start, $date_end, $min, $max, $sunonly = false)
 	{
+	  // 11/1/13 to MMDD
+	  $tmp_date_start = strtotime(urldecode($date_start));
+	  $date_start = date('md', $tmp_date_start);
+	  $date_end = date('md', strtotime(urldecode($date_end)));	  
+
 	  // check if it is already cached
        	  $key = 'planner_' . $date_start . $date_end . '_' . $min . '_' . $max . '_' . (($sunonly) ? 'true' : 'false');
 	  $cache = Cache::getInstance();
