@@ -1,6 +1,6 @@
 <?php
 
-//ini_set('display_errors', 'on');
+ini_set('display_errors', 'on');
 
 include('lib/meteo.php');
 require('lib/FlightFare.php');
@@ -26,12 +26,31 @@ require('lib/LookupAirport.php');
     <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
+
+<script>
+  function test() {$.ajax({
+  type: "POST",
+      url: "ajax_fare.php",
+      async: false,
+      data: {
+      "from": "sfo",
+	"to": "mia",
+	"fromDate": "09/11/2013",
+	"toDate": "09/21/2013",
+	}
+  }).done(function(ret) {
+      $('#hello').html(ret);
+    });
+}
+</script>
+
     <div id="map-canvas"></div>
 
 
     <div id="right-rail">
-        <?php require_once('./pearson/cities/paris.html'); ?>
-  <?php $f = new FlightFare('sfo', '09/11/2013', 'mia', '09/21/2013'); $f->displayCheapest(); ?>
+  <div id="hello"></div>
+        <?php require_once('./assets/cities/paris.html'); ?>
+  <?php $f = new FlightFare('sfo', '09/11/2013', 'mia', '09/21/2013'); echo $f->getCheapest(); ?>
   <br /><a target="_blank" href="<?php echo $f->getTicketURL(); ?>">Buy it!</a>
         <h1>SunTrip</h1>
         <H1>NOW</h1>
@@ -116,7 +135,7 @@ require('lib/LookupAirport.php');
 </div>
 
 <div class="form-group">
-   <input type='checkbox' name='thing' value='valuable' id="thing"/><label for="thing"></label>
+  <input type='checkbox' name='sunonly' value='valuable' id="sunonly"/><label for="sunonly"></label>
 </div>
 
 <div class="form-group" id="budget_div">
