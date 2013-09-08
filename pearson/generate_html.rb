@@ -25,6 +25,7 @@ end
 
 # restaurants
 html << "<h1>Restaurants</h1>"
+html << "All prices for a three-course meal for one with half a bottle of wine."
 restaurant_count = 0
 query_api("travel/#{cities_dataset[city]['dataset']}/places?category=restaurant&")['results'].each do |restaurant|
   if restaurant_count > 2
@@ -36,8 +37,7 @@ query_api("travel/#{cities_dataset[city]['dataset']}/places?category=restaurant&
     if info['address'] && info['price']
       html << "<p>"
       html << "<b>#{coder.encode(info['title'], :named)}</b><br>"
-      html << "Description: #{coder.encode(info['price']['range'], :named)}<br>"
-      html << "Price: #{coder.encode(info['price']['description'], :named)}<br>"
+      html << "Price: #{coder.encode(info['price']['range'], :named)}<br>"
       html << "Location: : #{coder.encode(info['address'], :named)}<br>"
       html << "</p>"
     end
