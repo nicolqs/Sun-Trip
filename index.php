@@ -20,6 +20,7 @@ include 'lib/meteo.php';
 <body>
     <div id="map-canvas"></div>
     <div id="right-rail">
+        <?php require_once('./pearson/cities/paris.html'); ?>
         <h1>SunTrip</h1>
         <H1>NOW</h1>
     <?php 
