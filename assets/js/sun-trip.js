@@ -5,8 +5,7 @@ $(function() {
 		var mapOptions = {
 			zoom: 3,
 			center: new google.maps.LatLng(30, -38),
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-		        mapTypeControl: false
+			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
@@ -48,10 +47,12 @@ $(function() {
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 	function getMeteoData() {
-	    $.post( '/ajax.php', ( $("#search-form").serialize(), { action: "get_meteo" } ) ).done( function(data){
+	    $.post( '/ajax.php', $("#search-form").serialize() ).done( function(data){
             var marker = {};
-            data = $.parseJSON( data );
-	    for ( var i = 0; i < 60; i++ ) {
+            //data = $.parseJSON( data );
+		data = {};
+
+			for ( var i = 0; i < 60; i++ ) {
 				if ( data[i] != undefined && data[i].current_observation != undefined ) {
 
 						if ( data[i].current_observation.icon_url.indexOf("/nt_") ) {
@@ -69,15 +70,10 @@ $(function() {
 
 					marker[i] = new google.maps.Marker({ 
 						position: myLatlng,
-					map: map,
+						map: map,
 						title: icon,//data[i].current_observation.display_location.full,
 						icon: icon,
 					});
-				    google.maps.event.addListener(marker[i], "click", function() {
-					$.get('/ajax.php', { action: "get_city_info", city: "moscow" }).done(function(data) {
-					    $("#right-rail").empty().html(data);
-					});
-				    });
 				}
 
 			}
@@ -105,5 +101,33 @@ $(function() {
 		showButtonPanel: true,
 		dateFormat: "d M, y",
     });
+
+  function test() {$.ajax({
+	  type: "POST",
+	      url: "ajax_fare.php",
+	      async: false,
+	      data: {
+		"from": "sfo",
+		"fromDate": "09/11/2013",
+		"toDate": "09/21/2013",
+		}
+	  }).done(function(ret) {
+	      $('#hello').html(ret);
+	    });
+	}
+  function test2() {$.ajax({
+	  type: "POST",
+	      url: "ajax_fare.php",
+	      async: false,
+	      data: {
+		"from": "sfo",
+		"to": "mia",
+		"fromDate": "09/11/2013",
+		"toDate": "09/21/2013",
+	      }
+	  }).done(function(ret) {
+	      $('#hello').html(ret);
+	    });
+	}
 });
 
