@@ -1,6 +1,5 @@
 <?php
 
-
 class Cache {
   protected $_ip = '88.190.224.121';
   protected $_port = 11211;
