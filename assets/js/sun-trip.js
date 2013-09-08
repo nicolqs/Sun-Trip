@@ -53,29 +53,20 @@ $(function() {
 
 			for ( var i = 0; i < 60; i++ ) {
 				if (  data[i].current_observation != undefined ) {
-					if ( data[i].current_observation.icon == 'clear' )  {
-						icon = '/assets/img/clear.gif';
-					} else {
+
 						if ( data[i].current_observation.icon_url.indexOf("/nt_") ) {
 							r = data[i].current_observation.icon_url.split('/');
+						    	//console.log( data[i].current_observation.icon_url );
 							if ( ! r[6].indexOf("nt_") ) {
-								// console.log( icon );
-								icon = r[6].substr(3, r[6].length);
-								console.log( icon );
+								icon = '/assets/img/' + r[6].substr(3, r[6].length);
 
 							} else {
-								icon = '/assets/img/clear.png';//data[i].current_observation.icon_url ;
-
-						// console.log(icon);
+								icon = data[i].current_observation.icon_url ;
 							}
 						}
 
-
-						icon = data[i].current_observation.icon_url ;
-				}
-
-
 					var myLatlng = new google.maps.LatLng(data[i].current_observation.display_location.latitude, data[i].current_observation.display_location.longitude);
+
 					marker[i] = new google.maps.Marker({ 
 						position: myLatlng,
 						map: map,
@@ -83,8 +74,10 @@ $(function() {
 						icon: icon,
 					});
 				}
-				
-            }
+
+			}
+			
+		
         });
 	}
 
