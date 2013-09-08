@@ -1,0 +1,8 @@
+templates_c
+*config.inc.php
+database.yml
+.htaccess
+.htpasswd
+*.log
+*~
+*\#
