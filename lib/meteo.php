@@ -105,11 +105,12 @@ class Meteo {
 	public function get_global_data()
 	{
 	  $cities = $this->get_all_cities();
-	  foreach ($cities as $c)
+	  foreach ($cities as $key => $c)
 	    {
 	      $meteo = $this->get_meteo_by_zmw($c['zmw'], true);
 	      $meteo->zmw = $c['zmw'];
 	      $meteo->dataset = $c['dataset'];
+	      $meteo->origin_name = $key;
 	      $data[] = $meteo;
 	    }
 	  return ($data);

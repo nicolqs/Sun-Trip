@@ -48,7 +48,7 @@ $(function() {
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 	function getMeteoData() {
-		$.post( '/ajax.php', ( $("#search-form").serialize(), { action: "get_meteo" } ) ).done( function(data){
+		$.post( '/ajax.php', ( $("#search-form").serialize(), { action: "get_meteo", data: $("#search-form").serialize() } ) ).done( function(data){
 			var marker = {};
 			data = $.parseJSON( data );
 
