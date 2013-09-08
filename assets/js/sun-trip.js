@@ -127,7 +127,7 @@ $(function() {
 	      async: false,
 	      data: {
 		"from": "sfo",
-		"fromDate": "09/11/2013",
+		"fromDate": "09/13/2013",
 		"toDate": "09/21/2013",
 		}
 	  }).done(function(ret) {
@@ -141,7 +141,7 @@ $(function() {
 	      data: {
 		"from": "sfo",
 		"to": "mia",
-		"fromDate": "09/11/2013",
+		"fromDate": "09/13/2013",
 		"toDate": "09/21/2013",
 	      }
 	  }).done(function(ret) {
