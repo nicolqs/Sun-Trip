@@ -120,14 +120,14 @@ require('lib/LookupAirport.php');
   <input type='checkbox' name='sunonly' value='valuable' id="sunonly" name="sunonly"/><label for="sunonly"></label>
 </div>
 
-<div class="form-group" id="budget_div">
+<div class="form-group" id="budget_div"  style="color:#afafaf;">
 	  Budget
 </div>
 
 <div class="form-group">
-	  <label class="sr-only" for="exampleInputEmail2" style="color:#afafaf">Budget</label>
+	  <label class="sr-only" for="exampleInputEmail2"">Budget</label>
 
-	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;" name="budget" disabled>
+	  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="$$$" style="width: 60px;" name="budget" title="In progress, stay tunned!" disabled>
 
 </div>
 
