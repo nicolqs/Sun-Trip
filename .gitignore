@@ -6,3 +6,4 @@ database.yml
 *.log
 *~
 *\#
+*.orig
