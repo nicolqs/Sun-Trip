@@ -90,7 +90,7 @@ if (isset($_POST['to'])) {
 
   $f = new FlightFare($_POST['from'], $_POST['fromDate'], $_POST['to'], $_POST['toDate']);
   echo $f->getCheapest();
-  echo '<br /><a id="buyit" target="_blank" href="'.$f->getTicketURL().'">Buy it!!!!!!!</a>';
+  echo '<a id="buyit" target="_blank" href="'.$f->getTicketURL().'">Buy it!!!!!!!</a>';
 
 } else {
 
