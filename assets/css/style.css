@@ -34,7 +34,7 @@ input[type=checkbox] + label
     background-image:url('../img/clear-off.png');
     height: 40px;
     width: 40px;
-    margin-top: 11px;
+    margin-top: 8px;
     margin-left: 25px;
 }
 
@@ -43,7 +43,7 @@ input[type=checkbox]:checked + label
     background-image:url('../img/clear-on.png');
     height:40px;
     width:40px;
-    margin-top: 11px;
+    margin-top: 8px;
     margin-left: 25px;
 }
 
