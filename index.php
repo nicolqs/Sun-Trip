@@ -23,13 +23,13 @@ include 'lib/meteo.php';
         <?php require_once('./pearson/cities/paris.html'); ?>
         <h1>SunTrip</h1>
         <H1>NOW</h1>
-    <?php 
+    <?php
 
         $meteoApi = Meteo::getInstance();
         $meteo = $meteoApi->getMeteo( true );
         $forecast = $meteoApi->getForecast( true );
 
-        echo $meteo->current_observation->display_location->city; 
+        echo $meteo->current_observation->display_location->city;
     ?>
         <img src="<?php echo $meteo->current_observation->icon_url; ?>">
 
