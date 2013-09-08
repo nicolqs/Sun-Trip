@@ -8,14 +8,15 @@ class Ajax {
 	}
 
 	protected function getAllWeather() {
-		$meteoApi = Meteo::getInstance();
-		$meteo = $meteoApi->get_global_data();
+		// $meteoApi = Meteo::getInstance();
+		// $meteo = $meteoApi->get_global_data();
   //       $meteo = $meteoApi->getMeteo();
   //       $forecast = $meteoApi->getForecast();
 
         // $output = json_encode( array( $meteo, $forecast ) );
 
-        echo json_encode ( $meteo );
+
+        echo $GLOBALS['meteo'];
         die();
 	}
 }
