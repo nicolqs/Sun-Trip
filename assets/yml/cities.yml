@@ -205,3 +205,31 @@ irkutsk:
 minneapolis:
   dataset:
   zmw: 55401.1.99999
+
+# fake data
+dallas:
+  zmw: 75201.1.99999
+caracas:
+  zmw: 00000.1.80414
+lima:
+  zmw: 00000.1.84628
+sucre:
+  zmw: 00000.1.85283
+niamey:
+  zmw: 00000.1.61052
+monrovia:
+  zmw: 00000.6.65602
+beijing:
+  zmw: 00000.1.54511
+irkutsk:
+  zmw: 00000.1.30710
+minneapolis:
+  zmw: 55401.1.99999
+bangalore:
+  zmw: 00000.1.43295
+novosibirsk:
+  zmw: 00000.1.29634
+bogota:
+  zmw: 00000.1.80222
+santiago:
+  zmw: 00000.1.85574

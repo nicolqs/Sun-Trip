@@ -59,7 +59,7 @@ results.each do |h|
         todo_counter += 1
         html << '<p>'
         html << "<b>#{coder.encode(place['images'][0]['title'].to_s, :named)}</b><br>"
-        html << "<img src=\"#{api_resource(place['images'][0]['image'])}\" style=\"width:90%;\"><br>"
+        html << "<img src=\"#{api_resource(place['images'][0]['image'])}\" style=\"width:100%;\"><br>"
         html << "#{coder.encode(place['text'], :named)}<br>"
         html << '</p>'
       end
