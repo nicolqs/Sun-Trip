@@ -47,17 +47,15 @@ $(function() {
 	google.maps.event.addDomListener(window, 'load', initialize);
 
 	function getMeteoData() {
-	    $.post( '/ajax.php', $("#search-form").serialize() ).done( function(data){
-            var marker = {};
-            //data = $.parseJSON( data );
-		data = {};
+		$.post( '/ajax.php', ( $("#search-form").serialize(), { action: "get_meteo" } ) ).done( function(data){
+			var marker = {};
+			data = $.parseJSON( data );
 
 			for ( var i = 0; i < 60; i++ ) {
 				if ( data[i] != undefined && data[i].current_observation != undefined ) {
 
 						if ( data[i].current_observation.icon_url.indexOf("/nt_") ) {
 							r = data[i].current_observation.icon_url.split('/');
-						    	//console.log( data[i].current_observation.icon_url );
 							if ( ! r[6].indexOf("nt_") ) {
 								icon = '/assets/img/' + r[6].substr(3, r[6].length);
 
