@@ -19,6 +19,7 @@ fieldset {
 	width:30%;
 	height:100%;
 	float:right;
+	background-color: #F9F9F9;
 overflow: scroll;
 
 border-left: 5px ridge green;
