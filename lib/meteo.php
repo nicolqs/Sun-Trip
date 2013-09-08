@@ -41,7 +41,7 @@ class Meteo {
 	 * return meteo JSON
 	 */
 	public function getMeteo( $decode = false ) {
-		$meteo = file_get_contents( $this->_meteo_api_endpoint . CITY );
+		$meteo = file_get_contents( $this->_meteo_api_endpoint );
 		if ( $decode ) {
 			$meteo = json_decode($meteo);
 		}
@@ -65,7 +65,7 @@ class Meteo {
 	 * return forecast JSON
 	 */
 	public function getForecast( $decode = false ) {
-		$forecast = file_get_contents( $this->_forecast_api_endpoint . CITY );
+		$forecast = file_get_contents( $this->_forecast_api_endpoint );
 		if ( $decode ) {
 			$forecast = json_decode($forecast);
 		}

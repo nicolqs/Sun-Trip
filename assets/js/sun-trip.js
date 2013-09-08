@@ -54,18 +54,22 @@ $(function() {
 			for ( var i = 0; i < 60; i++ ) {
 				if (  data[i].current_observation != undefined ) {
 					if ( data[i].current_observation.icon == 'clear' )  {
-						icon = "http://icons-ak.wxug.com/i/c/k/" + 'clear.gif';
-					}
-					else {
+						icon = '/assets/img/clear.gif';
+					} else {
 						if ( data[i].current_observation.icon_url.indexOf("/nt_") ) {
 							r = data[i].current_observation.icon_url.split('/');
 							if ( ! r[6].indexOf("nt_") ) {
-								console.log( icon );
+								// console.log( icon );
 								icon = r[6].substr(3, r[6].length);
+								console.log( icon );
+
 							} else {
-								icon = data[i].current_observation.icon_url ;
+								icon = '/assets/img/clear.png';//data[i].current_observation.icon_url ;
+
+						// console.log(icon);
 							}
 						}
+
 
 						icon = data[i].current_observation.icon_url ;
 				}
@@ -75,7 +79,7 @@ $(function() {
 					marker[i] = new google.maps.Marker({ 
 						position: myLatlng,
 						map: map,
-						title: data[i].current_observation.display_location.full,
+						title: icon,//data[i].current_observation.display_location.full,
 						icon: icon,
 					});
 				}
