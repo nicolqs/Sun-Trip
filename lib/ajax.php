@@ -95,7 +95,7 @@ function toto() {
     $ret = $f->search();
 
     if (!isset($ret[0][0][0]) || !isset($ret[1][0][0])) {
-      file_put_contents($city, "KO");
+//      file_put_contents($city, "KO");
       continue;
     }
 
@@ -104,7 +104,7 @@ function toto() {
 
     $buf[$city] = $leg1['price'];
 
-    file_put_contents($city, "done");
+//    file_put_contents($city, "done");
   }
   $memcacheObj->set($cacheKey, json_encode($buf));
   return json_encode($buf);
